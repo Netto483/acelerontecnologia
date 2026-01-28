@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import aoIcon from "@/assets/ao-icon.png";
 
 const HeroSection = () => {
   return (
@@ -23,11 +24,8 @@ const HeroSection = () => {
 
       <div className="relative max-w-5xl mx-auto text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-8 animate-fade-in">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-muted-foreground">
-            Soluções de Hardware & Software
-          </span>
+        <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 mb-8 animate-fade-in">
+          <img src={aoIcon} alt="AO" className="h-5 w-auto" />
         </div>
 
         {/* Main Headline */}
