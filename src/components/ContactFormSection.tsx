@@ -133,7 +133,7 @@ const ContactFormSection = () => {
           <Button
             type="submit"
             variant="hero"
-            className="w-full"
+            className="w-full bg-[#DB1B27] hover:bg-[#DB1B27]/90"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Enviando..." : "Enviar Mensagem"}

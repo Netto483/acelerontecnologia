@@ -78,10 +78,6 @@ const HeroSection = () => {
         className="relative max-w-5xl mx-auto text-center"
         style={{ transform: `translateY(${scrollY * 0.1}px)` }}
       >
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-3 py-1.5 mb-8 animate-fade-in">
-          <img src={aoIcon} alt="AO" className="h-5 w-auto" />
-        </div>
 
         {/* Main Headline */}
         <h1 
