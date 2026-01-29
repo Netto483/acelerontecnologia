@@ -23,7 +23,7 @@ const AutomationDevicesSection = () => {
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-              Hardware & IoT
+              Para Distribuidoras e Supermercados
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
               Automatize sua empresa com{" "}
