@@ -1,30 +1,48 @@
 import { Button } from "@/components/ui/button";
 import logoAceleron from "@/assets/logo-aceleron.png";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 px-6">
       <div className="max-w-7xl mx-auto">
-        <nav className="bg-white px-6 py-3 flex items-center justify-between rounded-2xl shadow-lg">
-          <div className="flex items-center gap-3">
+        <nav className={`px-6 py-3 flex items-center justify-between rounded-2xl transition-all duration-300 ${
+          isScrolled 
+            ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20" 
+            : "bg-transparent"
+        }`}>
+          <div className="flex items-center">
             <img 
               src={logoAceleron} 
               alt="Aceleron Logo" 
-              className="h-10 w-auto"
+              className="h-14 w-auto"
             />
-            <span className="font-display font-bold text-xl text-gray-900">
-              Aceleron
-            </span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#servicos" className="font-subtitle text-gray-600 hover:text-gray-900 transition-colors font-medium">
+            <a href="#servicos" className={`font-subtitle transition-colors font-medium ${
+              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+            }`}>
               Serviços
             </a>
-            <a href="#sobre" className="font-subtitle text-gray-600 hover:text-gray-900 transition-colors font-medium">
+            <a href="#sobre" className={`font-subtitle transition-colors font-medium ${
+              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+            }`}>
               Sobre
             </a>
-            <a href="#contato" className="font-subtitle text-gray-600 hover:text-gray-900 transition-colors font-medium">
+            <a href="#contato" className={`font-subtitle transition-colors font-medium ${
+              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+            }`}>
               Contato
             </a>
           </div>
