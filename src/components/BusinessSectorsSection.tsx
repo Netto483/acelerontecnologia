@@ -29,7 +29,7 @@ const BusinessSectorsSection = () => {
       <div className="mx-auto" style={{ maxWidth: '1169px', height: '520px' }}>
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Setores empresariais que mais necessitam de automação
           </h2>
           <p className="text-muted-foreground text-base max-w-3xl mx-auto">

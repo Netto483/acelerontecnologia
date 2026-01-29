@@ -1,28 +1,4 @@
-import { Smartphone, Monitor, BarChart3, Users } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-
-const features = [
-  {
-    icon: Smartphone,
-    title: "Acesso Mobile",
-    description: "Gerencie tudo pelo celular, em qualquer lugar.",
-  },
-  {
-    icon: Monitor,
-    title: "Dashboard Completo",
-    description: "Visualize todos os dados em tempo real.",
-  },
-  {
-    icon: BarChart3,
-    title: "Relatórios Inteligentes",
-    description: "Insights automáticos para decisões estratégicas.",
-  },
-  {
-    icon: Users,
-    title: "Gestão de Equipes",
-    description: "Controle de colaboradores e produtividade.",
-  },
-];
 
 const CompanyInHandSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -49,30 +25,6 @@ const CompanyInHandSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              style={{ 
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: `all 0.5s ease-out ${index * 0.1}s`
-              }}
-            >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-subtitle text-lg font-bold text-gray-900 mb-2">
-                {feature.title}
-              </h3>
-              <p className="font-subtitle text-gray-600 text-sm">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
