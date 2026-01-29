@@ -30,20 +30,20 @@ const CompanyInHandSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 px-6 bg-card/50 transition-all duration-700 ${
+      className={`py-24 px-6 bg-white transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             Toda a sua empresa,{" "}
-            <span className="font-sans italic text-gradient-primary">
+            <span className="font-subtitle italic text-gradient-primary">
               na palma da sua mão
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+          <p className="font-subtitle text-gray-600 text-lg max-w-2xl mx-auto mt-4">
             Sistemas integrados que permitem gerenciar seu negócio de qualquer 
             lugar, com total controle e visibilidade.
           </p>
@@ -54,7 +54,7 @@ const CompanyInHandSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               style={{ 
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -64,10 +64,10 @@ const CompanyInHandSection = () => {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4">
                 <feature.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-display text-lg font-bold mb-2">
+              <h3 className="font-subtitle text-lg font-bold text-gray-900 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="font-subtitle text-gray-600 text-sm">
                 {feature.description}
               </p>
             </div>
