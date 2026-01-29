@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import iotDevice from "@/assets/iot-device.png";
 
 const AutomationDevicesSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -18,29 +19,42 @@ const AutomationDevicesSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Header - aligned left */}
-        <div className="text-left mb-16 max-w-2xl">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-            Hardware & IoT
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-            Automatize sua empresa com{" "}
-            <span className="text-gradient-accent">dispositivos personalizados</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Desenvolvemos hardware especializado e soluções IoT que transformam 
-            a maneira como sua empresa opera.
-          </p>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Content - Left side */}
+          <div className="text-left flex-1 max-w-2xl">
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+              Hardware & IoT
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+              Automatize sua empresa com{" "}
+              <span className="text-gradient-accent">dispositivos personalizados</span>
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8">
+              Desenvolvemos hardware especializado e soluções IoT que transformam 
+              a maneira como sua empresa opera.
+            </p>
 
-          {/* Link style button */}
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-foreground font-semibold text-lg group hover:text-primary transition-colors relative"
-          >
-            Quero um dispositivo personalizado
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground group-hover:bg-primary transition-colors" />
-          </a>
+            {/* Link style button */}
+            <a 
+              href="#" 
+              className="inline-flex items-center gap-2 text-foreground font-semibold text-lg group hover:text-primary transition-colors relative"
+            >
+              Quero um dispositivo personalizado
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground group-hover:bg-primary transition-colors" />
+            </a>
+          </div>
+
+          {/* Image - Right side */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="relative">
+              <img 
+                src={iotDevice} 
+                alt="Dispositivo IoT personalizado" 
+                className="w-64 md:w-80 lg:w-96 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
