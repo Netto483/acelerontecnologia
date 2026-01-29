@@ -5,6 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import SitesEstrategicos from "./pages/SitesEstrategicos";
+import SistemasPersonalizados from "./pages/SistemasPersonalizados";
+import AutomacoesIA from "./pages/AutomacoesIA";
+import DispositivosPersonalizados from "./pages/DispositivosPersonalizados";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/sites-estrategicos" element={<SitesEstrategicos />} />
+          <Route path="/sistemas-personalizados" element={<SistemasPersonalizados />} />
+          <Route path="/automacoes-ia" element={<AutomacoesIA />} />
+          <Route path="/dispositivos-personalizados" element={<DispositivosPersonalizados />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

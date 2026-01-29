@@ -1,88 +1,166 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
-    category: "CRM",
-    title: "Sistema CRM completo para gestão de clientes e vendas",
-    image: "/placeholder.svg",
+    title: "Sites Estratégicos",
+    description: "Desenvolvemos sites que convertem visitantes em clientes com design focado em resultados.",
+    link: "/sites-estrategicos",
+    gradient: "from-blue-500/20 to-purple-500/20",
   },
   {
-    category: "Automação",
-    title: "Automação de processos internos e externos da empresa",
-    image: "/placeholder.svg",
+    title: "Sistemas Personalizados",
+    description: "Soluções sob medida para otimizar processos e aumentar a eficiência da sua empresa.",
+    link: "/sistemas-personalizados",
+    gradient: "from-emerald-500/20 to-teal-500/20",
   },
   {
-    category: "IoT",
-    title: "Dispositivos IoT para monitoramento em tempo real",
-    image: "/placeholder.svg",
+    title: "Automações com I.A.",
+    description: "Inteligência artificial aplicada para automatizar tarefas e multiplicar resultados.",
+    link: "/automacoes-ia",
+    gradient: "from-orange-500/20 to-red-500/20",
+  },
+  {
+    title: "Dispositivos Personalizados",
+    description: "Hardware IoT sob medida para monitoramento e automação do seu negócio.",
+    link: "/dispositivos-personalizados",
+    gradient: "from-violet-500/20 to-pink-500/20",
   },
 ];
 
-const categories = ["Em Alta", "CRM", "Automação", "IoT"];
-
 const ServicesSection = () => {
-  const [activeCategory, setActiveCategory] = useState("Em Alta");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const filteredServices = activeCategory === "Em Alta" 
-    ? services 
-    : services.filter(s => s.category === activeCategory);
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % services.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const handlePrev = () => {
+    setIsAutoPlaying(false);
+    setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const handleNext = () => {
+    setIsAutoPlaying(false);
+    setActiveIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const handleDotClick = (index: number) => {
+    setIsAutoPlaying(false);
+    setActiveIndex(index);
+  };
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-background">
+    <section className="py-20 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-4">
+        <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 mb-4">
           <span className="font-light">Entenda mais</span>{" "}
           <span className="font-bold">sobre nossos serviços</span>
         </h2>
 
         {/* Subtitle */}
-        <p className="font-subtitle text-lg md:text-xl text-muted-foreground text-center mb-10">
+        <p className="font-subtitle text-lg md:text-xl text-gray-600 text-center mb-16">
           Como nossos serviços irão atuar na sua empresa
         </p>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full border transition-all duration-300 font-medium text-sm ${
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card/50 text-foreground border-border hover:border-primary/50"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-white hover:scale-110 transition-all duration-300 -translate-x-4 md:-translate-x-6"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-white hover:scale-110 transition-all duration-300 translate-x-4 md:translate-x-6"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Image */}
-              <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-foreground/20 font-subtitle">
-                    {service.category}
-                  </span>
-                </div>
-              </div>
+          {/* Cards Container */}
+          <div className="flex items-center justify-center gap-4 md:gap-6 px-8 md:px-16 overflow-hidden">
+            {services.map((service, index) => {
+              const isActive = index === activeIndex;
+              const isPrev = index === (activeIndex - 1 + services.length) % services.length;
+              const isNext = index === (activeIndex + 1) % services.length;
+              const isVisible = isActive || isPrev || isNext;
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-subtitle font-semibold text-lg text-card-foreground leading-snug">
-                  {service.title}
-                </h3>
-              </div>
-            </div>
-          ))}
+              if (!isVisible) return null;
+
+              return (
+                <Link
+                  key={service.title}
+                  to={service.link}
+                  className={`
+                    relative flex-shrink-0 rounded-3xl overflow-hidden transition-all duration-500 ease-out
+                    ${isActive 
+                      ? "w-full md:w-[500px] h-[350px] md:h-[400px] z-10 scale-100 opacity-100" 
+                      : "w-[200px] md:w-[300px] h-[280px] md:h-[320px] z-0 scale-90 opacity-60"
+                    }
+                    ${!isActive ? "blur-[2px] pointer-events-none hidden md:block" : ""}
+                  `}
+                  onClick={(e) => {
+                    if (!isActive) {
+                      e.preventDefault();
+                      handleDotClick(index);
+                    }
+                  }}
+                >
+                  {/* Glass Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} backdrop-blur-xl`} />
+                  <div className="absolute inset-0 bg-white/40 backdrop-blur-md" />
+                  <div className="absolute inset-0 border border-white/50 rounded-3xl" />
+                  
+                  {/* Content */}
+                  <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
+                    <h3 className={`font-subtitle font-bold text-gray-900 mb-3 transition-all duration-300 ${
+                      isActive ? "text-2xl md:text-3xl" : "text-xl"
+                    }`}>
+                      {service.title}
+                    </h3>
+                    {isActive && (
+                      <p className="text-gray-700 text-base md:text-lg leading-relaxed animate-fade-in">
+                        {service.description}
+                      </p>
+                    )}
+                    {isActive && (
+                      <div className="mt-6 inline-flex items-center gap-2 text-primary font-semibold animate-fade-in">
+                        Saiba mais
+                        <ChevronRight className="w-5 h-5" />
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-3 mt-10">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === activeIndex 
+                    ? "bg-primary w-8" 
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

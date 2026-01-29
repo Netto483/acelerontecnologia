@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoAceleron from "@/assets/logo-aceleron.png";
 
 const Footer = () => {
@@ -28,19 +29,24 @@ const Footer = () => {
             <h4 className="font-display font-semibold mb-4">Serviços</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Sites & Landing Pages
-                </a>
+                <Link to="/sites-estrategicos" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Sites Estratégicos
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Sistemas Internos
-                </a>
+                <Link to="/sistemas-personalizados" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Sistemas Personalizados
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Automação com I.A.
-                </a>
+                <Link to="/automacoes-ia" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Automações com I.A.
+                </Link>
+              </li>
+              <li>
+                <Link to="/dispositivos-personalizados" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Dispositivos Personalizados
+                </Link>
               </li>
             </ul>
           </div>
