@@ -1,4 +1,5 @@
-import { Thermometer, Wifi, Bell, Clock } from "lucide-react";
+import { Thermometer, Wifi, Bell } from "lucide-react";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const freezerData = [
   { name: "Freezer 01", temp: -18, status: "normal" },
@@ -27,8 +28,15 @@ const features = [
 ];
 
 const FreezerMonitorSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-primary/10 via-primary/5 to-background relative overflow-hidden">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-24 px-6 bg-gradient-to-br from-primary/10 via-primary/5 to-background relative overflow-hidden transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -70,7 +78,7 @@ const FreezerMonitorSection = () => {
 
                     {/* Freezer Cards */}
                     <div className="space-y-3">
-                      {freezerData.map((freezer, index) => (
+                      {freezerData.map((freezer) => (
                         <div
                           key={freezer.name}
                           className={`p-3 rounded-xl border ${
@@ -150,8 +158,12 @@ const FreezerMonitorSection = () => {
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="glass-card p-4 hover:shadow-lg transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="glass-card p-4 hover:shadow-lg transition-all duration-300"
+                  style={{ 
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `all 0.5s ease-out ${index * 0.1}s`
+                  }}
                 >
                   <h3 className="font-display font-bold text-foreground mb-1">
                     {feature.title}

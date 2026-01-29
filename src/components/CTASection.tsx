@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const CTASection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 px-6">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-24 px-6 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-foreground to-foreground/90 p-12 md:p-16">
           {/* Background decorations */}

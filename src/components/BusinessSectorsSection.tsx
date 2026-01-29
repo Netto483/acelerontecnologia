@@ -1,3 +1,5 @@
+import useScrollReveal from "@/hooks/useScrollReveal";
+
 const sectors = [
   { name: "Moda", percentage: 3.1 },
   { name: "Consultoria", percentage: 3.2 },
@@ -15,8 +17,15 @@ const sectors = [
 const maxPercentage = Math.max(...sectors.map(s => s.percentage));
 
 const BusinessSectorsSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-16 px-6">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-16 px-6 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="mx-auto" style={{ maxWidth: '1169px', height: '520px' }}>
         {/* Header */}
         <div className="text-center mb-12">
@@ -37,8 +46,12 @@ const BusinessSectorsSection = () => {
             return (
               <div 
                 key={sector.name} 
-                className="flex flex-col items-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                className="flex flex-col items-center"
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.5s ease-out ${index * 0.05}s`
+                }}
               >
                 {/* Bar */}
                 <div 

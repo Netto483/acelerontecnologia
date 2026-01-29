@@ -1,12 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import aoIcon from "@/assets/ao-icon.png";
+import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        if (rect.bottom > 0) {
+          setScrollY(window.scrollY);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[hsl(220,30%,8%)]">
-      {/* Animated tech background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-background"
+    >
+      {/* Animated tech background with parallax */}
+      <div 
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+      >
         {/* Grid pattern */}
         <div 
           className="absolute inset-0 opacity-20"
@@ -51,7 +74,10 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-20 w-24 h-24 border border-secondary/5 rounded-full animate-pulse-slow" style={{ animationDelay: '1.2s' }} />
       </div>
 
-      <div className="relative max-w-5xl mx-auto text-center">
+      <div 
+        className="relative max-w-5xl mx-auto text-center"
+        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+      >
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-3 py-1.5 mb-8 animate-fade-in">
           <img src={aoIcon} alt="AO" className="h-5 w-auto" />
@@ -59,7 +85,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 
-          className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white"
+          className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-foreground"
           style={{ animationDelay: '0.1s' }}
         >
           Criamos{' '}
@@ -77,24 +103,21 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p 
-          className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 animate-fade-in"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in"
           style={{ animationDelay: '0.2s' }}
         >
           Transformamos sua visão em realidade digital com tecnologia de ponta e 
           inteligência artificial para impulsionar resultados.
         </p>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in"
+          className="animate-fade-in"
           style={{ animationDelay: '0.3s' }}
         >
           <Button variant="hero" className="group">
             Começar Projeto
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button variant="heroOutline">
-            Ver Portfólio
           </Button>
         </div>
       </div>
