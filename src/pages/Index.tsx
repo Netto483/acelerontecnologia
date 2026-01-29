@@ -7,7 +7,7 @@ import AutomationDevicesSection from "@/components/AutomationDevicesSection";
 import FreezerMonitorSection from "@/components/FreezerMonitorSection";
 import ServicesSection from "@/components/ServicesSection";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -23,7 +23,7 @@ const Index = () => {
         <FreezerMonitorSection />
         <ServicesSection />
         <FAQSection />
-        <CTASection />
+        <ContactFormSection />
       </main>
       <Footer />
     </div>
