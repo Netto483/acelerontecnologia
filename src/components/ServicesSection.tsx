@@ -28,7 +28,7 @@ const ServicesSection = () => {
     : services.filter(s => s.category === activeCategory);
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-muted/30">
+    <section className="py-20 px-4 md:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-foreground mb-4">
