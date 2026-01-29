@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import logoAceleron from "@/assets/logo-aceleron.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,13 +22,13 @@ const Header = () => {
             ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20" 
             : "bg-transparent"
         }`}>
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src={logoAceleron} 
               alt="Aceleron Logo" 
               className="h-14 w-auto"
             />
-          </div>
+          </Link>
           
           <div className="hidden md:flex items-center gap-8">
             <a href="#servicos" className={`font-subtitle transition-colors font-medium ${

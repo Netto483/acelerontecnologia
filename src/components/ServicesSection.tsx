@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -31,44 +31,30 @@ const services = [
 
 const ServicesSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
 
   const handlePrev = () => {
-    setIsAutoPlaying(false);
     setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
   };
 
   const handleNext = () => {
-    setIsAutoPlaying(false);
     setActiveIndex((prev) => (prev + 1) % services.length);
   };
 
   const handleDotClick = (index: number) => {
-    setIsAutoPlaying(false);
     setActiveIndex(index);
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-white">
+    <section className="py-20 px-4 md:px-8 bg-[#171417]">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 mb-4">
+        <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-white mb-4">
           <span className="font-light">Entenda mais</span>{" "}
           <span className="font-bold">sobre nossos serviços</span>
         </h2>
 
         {/* Subtitle */}
-        <p className="font-subtitle text-lg md:text-xl text-gray-600 text-center mb-16">
+        <p className="font-subtitle text-lg md:text-xl text-white/70 text-center mb-16">
           Como nossos serviços irão atuar na sua empresa
         </p>
 
