@@ -22,17 +22,17 @@ const BusinessSectorsSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-16 px-6 bg-white transition-all duration-700 ${
+      className={`py-16 px-6 bg-[#171417] transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div className="mx-auto" style={{ maxWidth: '1169px', height: '520px' }}>
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">
             Setores empresariais que mais necessitam de automação
           </h2>
-          <p className="text-muted-foreground text-base max-w-3xl mx-auto">
+          <p className="text-white/70 text-base max-w-3xl mx-auto">
             Veja alguns exemplos de setores que podem evoluir com nossas soluções. 
             Independentemente do seu segmento, nossas soluções são pensadas para 
             acelerar o crescimento da sua empresa.
@@ -63,7 +63,7 @@ const BusinessSectorsSection = () => {
                   </span>
                 </div>
                 {/* Label */}
-                <span className="text-xs md:text-sm text-muted-foreground mt-3 text-center max-w-[60px] md:max-w-[80px]">
+                <span className="text-xs md:text-sm text-white/70 mt-3 text-center max-w-[60px] md:max-w-[80px]">
                   {sector.name}
                 </span>
               </div>
@@ -72,7 +72,7 @@ const BusinessSectorsSection = () => {
         </div>
 
         {/* Footer text */}
-        <p className="text-center text-muted-foreground text-sm mt-8 max-w-4xl mx-auto italic">
+        <p className="text-center text-white/60 text-sm mt-8 max-w-4xl mx-auto italic">
           "Estes são apenas alguns dos segmentos que já impulsionaram seus resultados com automação. 
           Independentemente do setor, nossa metodologia é adaptável e comprovada para gerar crescimento em diferentes mercados."
         </p>
