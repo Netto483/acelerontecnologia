@@ -75,7 +75,7 @@ const HeroSection = () => {
       </div>
 
       <div 
-        className="relative max-w-7xl mx-auto text-left"
+        className="relative max-w-5xl mx-auto text-center"
         style={{ transform: `translateY(${scrollY * 0.1}px)` }}
       >
         {/* Badge */}
@@ -85,7 +85,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 
-          className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-foreground max-w-4xl"
+          className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-foreground"
           style={{ animationDelay: '0.1s' }}
         >
           Criamos{' '}
@@ -103,7 +103,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p 
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 animate-fade-in"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in"
           style={{ animationDelay: '0.2s' }}
         >
           Transformamos sua visão em realidade digital com tecnologia de ponta e 

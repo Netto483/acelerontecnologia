@@ -49,12 +49,12 @@ const AutomationDevicesSection = () => {
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
               {/* Top label - Sensor de temperatura */}
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap mb-2">
+              <div className="absolute -top-8 -left-12 md:-left-20 flex items-end gap-2">
+                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
                   Sensor de temperatura e humidade
                 </span>
-                <svg className="w-8 h-8 text-muted-foreground" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 4 L12 20 M12 20 L6 14 M12 20 L18 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground" viewBox="0 0 60 60" fill="none">
+                  <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
               </div>
               
@@ -65,11 +65,11 @@ const AutomationDevicesSection = () => {
               />
               
               {/* Bottom label - Envia dados */}
-              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <svg className="w-8 h-8 text-muted-foreground" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 4 L12 20 M12 20 L6 14 M12 20 L18 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <div className="absolute -bottom-8 -right-8 md:-right-16 flex items-start gap-2">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground rotate-180" viewBox="0 0 60 60" fill="none">
+                  <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
-                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap mt-2">
+                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
                   Envia dados para qualquer dispositivo
                 </span>
               </div>
