@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import crmDashboard from "@/assets/crm-dashboard.png";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const InternalSystemsSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-12 px-6">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-12 px-6 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="mx-auto" style={{ maxWidth: '1000px', maxHeight: '366px' }}>
         <div className="flex gap-8 items-center">
           {/* Left Content */}

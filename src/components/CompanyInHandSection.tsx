@@ -1,4 +1,5 @@
 import { Smartphone, Monitor, BarChart3, Users } from "lucide-react";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const features = [
   {
@@ -24,8 +25,15 @@ const features = [
 ];
 
 const CompanyInHandSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 px-6 bg-card/50">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-24 px-6 bg-card/50 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -46,8 +54,12 @@ const CompanyInHandSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              style={{ 
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.5s ease-out ${index * 0.1}s`
+              }}
             >
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mx-auto mb-4">
                 <feature.icon className="w-7 h-7 text-primary" />
