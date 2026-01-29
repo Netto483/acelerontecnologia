@@ -45,14 +45,34 @@ const AutomationDevicesSection = () => {
             </a>
           </div>
 
-          {/* Image - Right side */}
+          {/* Image - Right side with labels */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
+              {/* Top label - Sensor de temperatura */}
+              <div className="absolute -top-8 -left-12 md:-left-20 flex items-end gap-2">
+                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
+                  Sensor de temperatura e humidade
+                </span>
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground" viewBox="0 0 60 60" fill="none">
+                  <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                </svg>
+              </div>
+              
               <img 
                 src={iotDevice} 
                 alt="Dispositivo IoT personalizado" 
                 className="w-64 md:w-80 lg:w-96 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
               />
+              
+              {/* Bottom label - Envia dados */}
+              <div className="absolute -bottom-8 -right-8 md:-right-16 flex items-start gap-2">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground rotate-180" viewBox="0 0 60 60" fill="none">
+                  <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                </svg>
+                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
+                  Envia dados para qualquer dispositivo
+                </span>
+              </div>
             </div>
           </div>
         </div>
