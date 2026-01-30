@@ -12,9 +12,10 @@ const CompanyInHandSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        <div className="text-center mb-16 px-4">
+          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Toda a sua empresa,{" "}
+            <br className="hidden sm:block" />
             <span className="font-subtitle italic text-gradient-primary">
               na palma da sua mão
             </span>
