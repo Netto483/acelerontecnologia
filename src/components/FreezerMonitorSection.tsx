@@ -14,7 +14,7 @@ const features = [
     description: "Acompanhe a temperatura dos seus freezers em tempo real.",
   },
   {
-    title: "Alertas Inteligentes",
+    title: "Alertas de mudança de temperatura",
     description: "Receba notificações quando a temperatura sair do ideal.",
   },
   {
