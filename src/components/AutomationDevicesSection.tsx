@@ -8,7 +8,7 @@ const AutomationDevicesSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 px-6 relative overflow-hidden transition-all duration-700 ${
+      className={`py-24 px-6 relative overflow-hidden transition-all duration-700 bg-[#171417] ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -19,17 +19,24 @@ const AutomationDevicesSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+            Dispositivos Eletrônicos Personalizados
+          </h2>
+        </div>
+
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
               Para Distribuidoras e Supermercados
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+            <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
               Automatize sua empresa com{" "}
               <span className="text-gradient-accent">dispositivos personalizados</span>
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            </h3>
+            <p className="text-gray-400 text-lg mb-8">
               Desenvolvemos hardware especializado e soluções IoT que transformam 
               a maneira como sua empresa opera.
             </p>
@@ -37,11 +44,11 @@ const AutomationDevicesSection = () => {
             {/* Link style button */}
             <a 
               href="#" 
-              className="inline-flex items-center gap-2 text-foreground font-semibold text-lg group hover:text-primary transition-colors relative"
+              className="inline-flex items-center gap-2 text-white font-semibold text-lg group hover:text-primary transition-colors relative"
             >
               Quero um dispositivo personalizado
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground group-hover:bg-primary transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white group-hover:bg-primary transition-colors" />
             </a>
           </div>
 
@@ -50,10 +57,10 @@ const AutomationDevicesSection = () => {
             <div className="relative">
               {/* Top label - Sensor de temperatura */}
               <div className="absolute -top-8 -left-12 md:-left-20 flex items-end gap-2">
-                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
+                <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Sensor de temperatura e humidade
                 </span>
-                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground" viewBox="0 0 60 60" fill="none">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-400" viewBox="0 0 60 60" fill="none">
                   <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
               </div>
@@ -66,10 +73,10 @@ const AutomationDevicesSection = () => {
               
               {/* Bottom label - Envia dados */}
               <div className="absolute -bottom-8 -right-8 md:-right-16 flex items-start gap-2">
-                <svg className="w-12 h-12 md:w-16 md:h-16 text-muted-foreground rotate-180" viewBox="0 0 60 60" fill="none">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-400 rotate-180" viewBox="0 0 60 60" fill="none">
                   <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
-                <span className="text-foreground font-medium text-sm md:text-base whitespace-nowrap">
+                <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Envia dados para qualquer dispositivo
                 </span>
               </div>
