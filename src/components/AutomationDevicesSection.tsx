@@ -56,7 +56,7 @@ const AutomationDevicesSection = () => {
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
               {/* Top label - Sensor de temperatura */}
-              <div className="absolute -top-8 -left-12 md:-left-20 flex items-end gap-2">
+              <div className="absolute -top-[41px] -left-12 md:-left-20 flex items-end gap-2">
                 <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Sensor de temperatura e humidade
                 </span>
@@ -72,7 +72,7 @@ const AutomationDevicesSection = () => {
               />
               
               {/* Bottom label - Envia dados */}
-              <div className="absolute -bottom-8 -right-8 md:-right-16 flex items-start gap-2">
+              <div className="absolute -bottom-[41px] -right-8 md:-right-16 flex items-start gap-2">
                 <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-400 rotate-180" viewBox="0 0 60 60" fill="none">
                   <path d="M5 5 L30 30 L30 55" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
