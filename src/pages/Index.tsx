@@ -22,8 +22,8 @@ const Index = () => {
         <HeroSection />
         <InternalSystemsSection />
         <DataUnificationSection />
-        <CaseStudySection />
         <AILeadsSection />
+        <CaseStudySection />
         <InfiniteMarquee />
         <BusinessSectorsSection />
         

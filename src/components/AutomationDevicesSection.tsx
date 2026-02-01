@@ -44,7 +44,7 @@ const AutomationDevicesSection = () => {
             {/* Link style button */}
             <a 
               href="#" 
-              className="inline-flex items-center gap-2 text-white font-semibold text-lg group hover:text-primary transition-colors relative"
+              className="inline-flex items-center gap-2 text-white font-thin text-lg group hover:text-primary transition-colors relative"
             >
               Quero um dispositivo personalizado
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -56,13 +56,14 @@ const AutomationDevicesSection = () => {
           <div className="flex-1 flex justify-center lg:justify-start">
             <div className="relative">
               {/* Top label - Sensor de temperatura */}
-              <div className="absolute -top-[41px] -left-12 md:-left-24 flex items-center gap-2">
+              <div className="absolute -top-[41px] -left-12 md:-left-24 flex items-center gap-3">
                 <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Sensor de temperatura e humidade
                 </span>
-                <svg className="w-8 h-8 md:w-12 md:h-12 text-gray-400" viewBox="0 0 40 40" fill="none">
-                  <path d="M0 0 L20 20 L20 40" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                </svg>
+                <div className="flex items-center">
+                  <div className="w-8 md:w-12 h-px bg-gray-400" />
+                  <div className="w-2 h-2 rounded-full bg-gray-400" />
+                </div>
               </div>
               
               <img 
@@ -72,10 +73,11 @@ const AutomationDevicesSection = () => {
               />
               
               {/* Bottom label - Envia dados */}
-              <div className="absolute -bottom-[41px] -right-8 md:-right-20 flex items-center gap-2">
-                <svg className="w-8 h-8 md:w-12 md:h-12 text-gray-400 rotate-180" viewBox="0 0 40 40" fill="none">
-                  <path d="M0 0 L20 20 L20 40" stroke="currentColor" strokeWidth="1.5" fill="none" />
-                </svg>
+              <div className="absolute -bottom-[41px] -right-8 md:-right-20 flex items-center gap-3">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 rounded-full bg-gray-400" />
+                  <div className="w-8 md:w-12 h-px bg-gray-400" />
+                </div>
                 <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Envia dados para qualquer dispositivo
                 </span>
