@@ -61,7 +61,7 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-white mb-4">
-          <span className="font-light">Entenda mais</span>{" "}
+          <span className="font-thin">Entenda mais</span>{" "}
           <span className="font-bold">sobre nossos serviços</span>
         </h2>
 
