@@ -1,6 +1,6 @@
 import { Thermometer, Wifi, Bell } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import { useEffect, useState } from "react";
+
 
 const freezerData = [
   { name: "Freezer 01", temp: -18, status: "normal" },
@@ -30,15 +30,6 @@ const features = [
 
 const FreezerMonitorSection = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <section 
@@ -59,11 +50,8 @@ const FreezerMonitorSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Phone Mockup with Parallax */}
-          <div 
-            className="flex justify-center lg:justify-start"
-            style={{ transform: `translateY(${scrollY * 0.05}px)` }}
-          >
+          {/* Phone Mockup */}
+          <div className="flex justify-center lg:justify-start">
             <div className="relative">
               {/* Phone Frame */}
               <div className="w-[280px] h-[580px] bg-foreground rounded-[3rem] p-3 shadow-2xl">
@@ -167,9 +155,7 @@ const FreezerMonitorSection = () => {
             </p>
 
             {/* Feature Cards with Glass Effect */}
-            <div 
-              className="grid sm:grid-cols-2 gap-4"
-              style={{ transform: `translateY(${scrollY * -0.03}px)` }}
+            <div className="grid sm:grid-cols-2 gap-4"
             >
               {features.map((feature, index) => (
                 <div

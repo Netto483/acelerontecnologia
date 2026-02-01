@@ -44,6 +44,18 @@ const ServicesSection = () => {
     setActiveIndex(index);
   };
 
+  // Calculate positions for each card
+  const getCardPosition = (index: number) => {
+    const diff = index - activeIndex;
+    const normalizedDiff = ((diff + services.length) % services.length);
+    
+    // Map positions: 0 = center, 1 = right, 2 = far right/hidden, 3 = left
+    if (normalizedDiff === 0) return "center";
+    if (normalizedDiff === 1) return "right";
+    if (normalizedDiff === services.length - 1) return "left";
+    return "hidden";
+  };
+
   return (
     <section className="py-20 px-4 md:px-8 bg-[#171417]">
       <div className="max-w-7xl mx-auto">
@@ -76,29 +88,36 @@ const ServicesSection = () => {
           </button>
 
           {/* Cards Container */}
-          <div className="flex items-center justify-center gap-4 md:gap-6 px-8 md:px-16 overflow-hidden">
+          <div className="relative h-[400px] md:h-[450px] flex items-center justify-center px-8 md:px-16">
             {services.map((service, index) => {
-              const isActive = index === activeIndex;
-              const isPrev = index === (activeIndex - 1 + services.length) % services.length;
-              const isNext = index === (activeIndex + 1) % services.length;
-              const isVisible = isActive || isPrev || isNext;
+              const position = getCardPosition(index);
+              
+              if (position === "hidden") return null;
 
-              if (!isVisible) return null;
+              const isCenter = position === "center";
+              const isLeft = position === "left";
+              const isRight = position === "right";
 
               return (
                 <Link
                   key={service.title}
                   to={service.link}
                   className={`
-                    relative flex-shrink-0 rounded-3xl overflow-hidden transition-all duration-500 ease-out
-                    ${isActive 
-                      ? "w-full md:w-[500px] h-[350px] md:h-[400px] z-10 scale-100 opacity-100" 
-                      : "w-[200px] md:w-[300px] h-[280px] md:h-[320px] z-0 scale-90 opacity-60"
+                    absolute rounded-3xl overflow-hidden transition-all duration-500 ease-out
+                    ${isCenter 
+                      ? "w-[90%] md:w-[500px] h-[350px] md:h-[400px] z-10 opacity-100" 
+                      : "w-[200px] md:w-[300px] h-[280px] md:h-[320px] z-0 opacity-60 blur-[2px] pointer-events-none hidden md:block"
                     }
-                    ${!isActive ? "blur-[2px] pointer-events-none hidden md:block" : ""}
                   `}
+                  style={{
+                    transform: isCenter 
+                      ? "translateX(0) scale(1)" 
+                      : isLeft 
+                        ? "translateX(-120%) scale(0.85)" 
+                        : "translateX(120%) scale(0.85)",
+                  }}
                   onClick={(e) => {
-                    if (!isActive) {
+                    if (!isCenter) {
                       e.preventDefault();
                       handleDotClick(index);
                     }
@@ -112,16 +131,16 @@ const ServicesSection = () => {
                   {/* Content */}
                   <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
                     <h3 className={`font-subtitle font-bold text-gray-900 mb-3 transition-all duration-300 ${
-                      isActive ? "text-2xl md:text-3xl" : "text-xl"
+                      isCenter ? "text-2xl md:text-3xl" : "text-xl"
                     }`}>
                       {service.title}
                     </h3>
-                    {isActive && (
+                    {isCenter && (
                       <p className="text-gray-700 text-base md:text-lg leading-relaxed animate-fade-in">
                         {service.description}
                       </p>
                     )}
-                    {isActive && (
+                    {isCenter && (
                       <div className="mt-6 inline-flex items-center gap-2 text-primary font-semibold animate-fade-in">
                         Saiba mais
                         <ChevronRight className="w-5 h-5" />

@@ -9,9 +9,10 @@ const DataUnificationSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-12 px-6 bg-white transition-all duration-700 ${
+      className={`py-12 px-6 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
+      style={{ backgroundColor: '#191518' }}
     >
       <div className="mx-auto" style={{ maxWidth: '1000px', maxHeight: '366px' }}>
         <div className="flex gap-8 items-center">
@@ -26,12 +27,12 @@ const DataUnificationSection = () => {
 
           {/* Right Content */}
           <div className="space-y-4 flex-1">
-            <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight text-gray-900">
+            <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight text-white">
               Todos os dados da sua empresa{' '}
               <span className="text-primary">em um só lugar</span>
             </h2>
             
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-white/70 text-base leading-relaxed">
               Criamos o Seu próprio sistema de gestão da Sua Empresa de acordo com as suas necessidades.
             </p>
 
