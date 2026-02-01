@@ -29,7 +29,7 @@ const DataUnificationSection = () => {
           <div className="space-y-4 flex-1">
             <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight text-white">
               Todos os dados da sua empresa{' '}
-              <span className="text-primary">em um só lugar</span>
+              <span className="text-primary font-thin">em um só lugar</span>
             </h2>
             
             <p className="text-white/70 text-base leading-relaxed">
