@@ -36,7 +36,7 @@ const DataUnificationSection = () => {
               Criamos o Seu próprio sistema de gestão da Sua Empresa de acordo com as suas necessidades.
             </p>
 
-            <Button variant="hero" className="group">
+            <Button variant="hero" className="group font-thin">
               Analisar Oportunidade
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
