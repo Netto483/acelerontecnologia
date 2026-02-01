@@ -145,7 +145,7 @@ const FreezerMonitorSection = () => {
           <div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Monitore a temperatura dos seus{" "}
-              <span className="font-sans italic text-gradient-primary">
+              <span className="font-sans italic font-thin text-gradient-primary">
                 Freezer's
               </span>{" "}
               de qualquer lugar

@@ -111,7 +111,7 @@ const HeroSection = () => {
           className="animate-fade-in"
           style={{ animationDelay: '0.3s' }}
         >
-          <Button variant="hero" className="group">
+          <Button variant="hero" className="group font-thin">
             Começar Projeto
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>

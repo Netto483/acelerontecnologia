@@ -1,9 +1,9 @@
 const phrases = [
-  { bold: "Corte", rest: " gastos desnecessários" },
-  { bold: "Automatize", rest: " processos repetitivos" },
-  { bold: "Deixe", rest: " seu site estratégico" },
-  { bold: "Crie", rest: " dispositivos personalizados" },
-  { bold: "Obtenha", rest: " tudo sobre sua empresa em um só lugar" },
+  { bold: "Corte", rest: " gastos desnecessários", thinPart: "" },
+  { bold: "Automatize", rest: " ", thinPart: "processos repetitivos" },
+  { bold: "Deixe", rest: " ", thinPart: "seu site estratégico" },
+  { bold: "Crie", rest: " ", thinPart: "dispositivos personalizados" },
+  { bold: "Obtenha", rest: " ", thinPart: "tudo sobre sua empresa em um só lugar" },
 ];
 
 const InfiniteMarquee = () => {
@@ -19,6 +19,7 @@ const InfiniteMarquee = () => {
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>
+              <span className="font-thin">{phrase.thinPart}</span>
             </span>
           ))}
         </div>
@@ -31,6 +32,7 @@ const InfiniteMarquee = () => {
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>
+              <span className="font-thin">{phrase.thinPart}</span>
             </span>
           ))}
         </div>

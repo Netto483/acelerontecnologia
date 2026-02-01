@@ -34,7 +34,7 @@ const AutomationDevicesSection = () => {
             </span>
             <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
               Automatize sua empresa com{" "}
-              <span className="text-gradient-accent">dispositivos personalizados</span>
+              <span className="text-gradient-accent font-thin">dispositivos personalizados</span>
             </h3>
             <p className="text-gray-400 text-lg mb-8">
               Desenvolvemos hardware especializado e soluções IoT que transformam 

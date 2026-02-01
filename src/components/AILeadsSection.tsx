@@ -52,7 +52,7 @@ const AILeadsSection = () => {
             {/* Link style button */}
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-foreground font-semibold text-lg group hover:text-primary transition-colors relative"
+              className="inline-flex items-center gap-2 text-foreground font-thin text-lg group hover:text-primary transition-colors relative"
             >
               Quero automatizar meu atendimento
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

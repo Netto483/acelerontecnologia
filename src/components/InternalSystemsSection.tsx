@@ -19,7 +19,7 @@ const InternalSystemsSection = () => {
           <div className="space-y-4 flex-1">
             <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight">
               Criamos o seu sistema interno{' '}
-              <span className="text-primary">100% personalizado</span>{' '}
+              <span className="text-primary font-thin">100% personalizado</span>{' '}
               às suas necessidades.
             </h2>
             
@@ -28,7 +28,7 @@ const InternalSystemsSection = () => {
               da sua empresa, aumentando a eficiência e reduzindo custos operacionais.
             </p>
 
-            <Button variant="hero" className="group">
+            <Button variant="hero" className="group font-thin">
               Analisar Oportunidade
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
