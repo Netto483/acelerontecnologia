@@ -33,7 +33,7 @@ const DataUnificationSection = () => {
             </h2>
             
             <p className="text-white/70 text-base leading-relaxed">
-              Criamos o Seu próprio sistema de gestão da Sua Empresa de acordo com as suas necessidades.
+              Dashboard's completos e atualizados em tempo real.
             </p>
 
             <Button variant="hero" className="group font-thin">

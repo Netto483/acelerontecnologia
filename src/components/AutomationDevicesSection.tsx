@@ -60,13 +60,13 @@ const AutomationDevicesSection = () => {
           <div className="flex-1 flex justify-center lg:justify-start">
             <div className="relative">
               {/* Top label - Sensor de temperatura */}
-              <div className="absolute -top-[28px] -left-8 md:-left-16 flex items-center gap-2">
+              <div className="absolute -top-[12px] -left-4 md:-left-8 flex items-center gap-1">
                 <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Sensor de temperatura e humidade
                 </span>
                 <div className="flex items-center">
-                  <div className="w-6 md:w-8 h-px bg-gray-400" />
-                  <div className="w-2 h-2 rounded-full bg-gray-400" />
+                  <div className="w-4 md:w-6 h-px bg-gray-400" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                 </div>
               </div>
               
@@ -77,10 +77,10 @@ const AutomationDevicesSection = () => {
               />
               
               {/* Bottom label - Envia dados */}
-              <div className="absolute -bottom-[28px] -right-4 md:-right-12 flex items-center gap-2">
+              <div className="absolute -bottom-[12px] -right-2 md:-right-6 flex items-center gap-1">
                 <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-gray-400" />
-                  <div className="w-6 md:w-8 h-px bg-gray-400" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
+                  <div className="w-4 md:w-6 h-px bg-gray-400" />
                 </div>
                 <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
                   Envia dados para qualquer dispositivo
