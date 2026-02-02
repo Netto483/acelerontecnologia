@@ -51,8 +51,12 @@ const AILeadsSection = () => {
 
             {/* Link style button */}
             <a
-              href="#"
-              className="inline-flex items-center gap-2 text-foreground font-thin text-lg group hover:text-primary transition-colors relative"
+              href="#contato"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 text-foreground font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
               Quero automatizar meu atendimento
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

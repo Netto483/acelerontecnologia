@@ -81,7 +81,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 
-          className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-foreground"
+          className="font-subtitle text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-foreground"
           style={{ animationDelay: '0.1s' }}
         >
           Criamos{' '}
@@ -102,8 +102,7 @@ const HeroSection = () => {
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in"
           style={{ animationDelay: '0.2s' }}
         >
-          Transformamos sua visão em realidade digital com tecnologia de ponta e 
-          inteligência artificial para impulsionar resultados.
+          Unifique dados espalhados. Automatize tarefas repetitivas. Posicione-se estrategicamente.
         </p>
 
         {/* CTA Button */}
@@ -111,7 +110,11 @@ const HeroSection = () => {
           className="animate-fade-in"
           style={{ animationDelay: '0.3s' }}
         >
-          <Button variant="hero" className="group font-thin">
+          <Button 
+            variant="hero" 
+            className="group font-thin"
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Começar Projeto
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
