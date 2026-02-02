@@ -20,7 +20,7 @@ const AILeadsSection = () => {
             </span>
             <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
               Automatize o atendimento dos leads com{" "}
-              <span className="text-gradient-accent">I.A</span>
+              <span className="text-gradient-accent">Inteligência Artificial</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
               Utilize inteligência artificial para qualificar, nutrir e converter 
@@ -30,20 +30,20 @@ const AILeadsSection = () => {
             {/* Features list */}
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                  <MessageSquare className="w-4 h-4 text-white" />
                 </div>
                 <span>Respostas instantâneas e personalizadas</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-secondary" />
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-white" />
                 </div>
                 <span>Qualificação automática de leads</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-white" />
                 </div>
                 <span>Integração com WhatsApp e outras plataformas</span>
               </li>

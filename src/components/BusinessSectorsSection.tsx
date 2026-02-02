@@ -22,7 +22,7 @@ const BusinessSectorsSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-16 px-6 bg-[#171417] transition-all duration-700 ${
+      className={`pt-32 pb-16 px-6 bg-[#171417] transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
