@@ -9,7 +9,7 @@ const DataUnificationSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-12 px-6 transition-all duration-700 ${
+      className={`pt-24 pb-12 px-6 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ backgroundColor: '#191518' }}

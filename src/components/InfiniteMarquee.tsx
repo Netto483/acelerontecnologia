@@ -8,7 +8,7 @@ const phrases = [
 
 const InfiniteMarquee = () => {
   return (
-    <section className="py-8 bg-[#171417] overflow-hidden">
+    <section className="pt-24 pb-8 bg-[#171417] overflow-hidden">
       <div className="relative flex">
         {/* First copy */}
         <div className="flex animate-marquee whitespace-nowrap">
