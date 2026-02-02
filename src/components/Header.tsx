@@ -48,7 +48,11 @@ const Header = () => {
             </a>
           </div>
 
-          <Button variant="default" size="sm">
+          <Button 
+            variant="default" 
+            size="sm"
+            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Fale Conosco
           </Button>
         </nav>

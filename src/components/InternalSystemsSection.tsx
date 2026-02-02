@@ -28,7 +28,11 @@ const InternalSystemsSection = () => {
               da sua empresa, aumentando a eficiência e reduzindo custos operacionais.
             </p>
 
-            <Button variant="hero" className="group font-thin">
+            <Button 
+              variant="hero" 
+              className="group font-thin"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Analisar Oportunidade
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
