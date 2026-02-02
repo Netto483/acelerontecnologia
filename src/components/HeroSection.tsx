@@ -85,11 +85,11 @@ const HeroSection = () => {
           style={{ animationDelay: '0.1s' }}
         >
           Criamos{' '}
-          <span className="text-gradient-primary">sites</span>,{' '}
-          <span className="text-gradient-accent">sistemas internos</span>{' '}
+          <span className="text-primary font-thin">sites</span>,{' '}
+          <span className="text-secondary font-thin">sistemas internos</span>{' '}
           e{' '}
           <span className="relative inline-block">
-            <span className="text-gradient-primary">Automações</span>
+            <span className="text-primary font-thin">Automações</span>
             <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
               <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round"/>
             </svg>

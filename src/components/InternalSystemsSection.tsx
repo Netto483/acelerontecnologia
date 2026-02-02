@@ -20,12 +20,12 @@ const InternalSystemsSection = () => {
             <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight">
               Criamos o seu sistema interno{' '}
               <span className="text-primary font-thin">100% personalizado</span>{' '}
-              às suas necessidades.
+              as suas necessidades.
             </h2>
             
             <p className="text-muted-foreground text-base leading-relaxed">
-              Desenvolvemos soluções sob medida que se adaptam perfeitamente aos processos 
-              da sua empresa, aumentando a eficiência e reduzindo custos operacionais.
+              Desenvolvemos o sistema interno da sua empresa sob medida. Adaptado perfeitamente 
+              aos processos dela, aumentando a eficiência e reduzindo dados dispersos.
             </p>
 
             <Button 
