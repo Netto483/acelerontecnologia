@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import institutoMecaImage from "@/assets/instituto-meca.png";
 
 const CaseStudySection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -17,10 +18,11 @@ const CaseStudySection = () => {
           <div className="flex-1 flex justify-center lg:justify-start">
             <div className="relative w-full max-w-md lg:max-w-lg">
               <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border overflow-hidden">
-                {/* Placeholder for future image */}
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <span className="text-sm">Imagem do case</span>
-                </div>
+                <img 
+                  src={institutoMecaImage} 
+                  alt="Instituto MECA - Medicina Estética e Capilar Avançada"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative element */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
