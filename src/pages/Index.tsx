@@ -5,8 +5,6 @@ import DataUnificationSection from "@/components/DataUnificationSection";
 import AILeadsSection from "@/components/AILeadsSection";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import CaseStudySection from "@/components/CaseStudySection";
-import BusinessSectorsSection from "@/components/BusinessSectorsSection";
-
 import AutomationDevicesSection from "@/components/AutomationDevicesSection";
 import ServicesSection from "@/components/ServicesSection";
 import FAQSection from "@/components/FAQSection";
@@ -24,8 +22,6 @@ const Index = () => {
         <AILeadsSection />
         <CaseStudySection />
         <InfiniteMarquee />
-        <BusinessSectorsSection />
-        
         <AutomationDevicesSection />
         <ServicesSection />
         <FAQSection />
