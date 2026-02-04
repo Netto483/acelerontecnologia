@@ -36,12 +36,12 @@ const CaseStudySection = () => {
             </span>
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-6 leading-tight">
               O Instituto Meca economizou mais de{" "}
-              <span className="text-gradient-accent">R$30.000</span>{" "}
-              ao ano após implementar I.A no seu atendimento
+              <span className="text-gradient-accent">R$ 30.000</span>{" "}
+              por ano após implementar IA no atendimento
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Descubra como a automação inteligente pode transformar os resultados 
-              da sua empresa assim como fez com o Instituto Meca.
+              Descubra como a Inteligência Artificial pode aumentar a produtividade 
+              da sua operação e reduzir custos.
             </p>
 
             {/* Link style button */}
