@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import InternalSystemsSection from "@/components/InternalSystemsSection";
-import DataUnificationSection from "@/components/DataUnificationSection";
 import AILeadsSection from "@/components/AILeadsSection";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import CaseStudySection from "@/components/CaseStudySection";
@@ -18,7 +17,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <InternalSystemsSection />
-        <DataUnificationSection />
         <AILeadsSection />
         <CaseStudySection />
         <InfiniteMarquee />
