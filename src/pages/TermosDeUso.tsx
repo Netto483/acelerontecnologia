@@ -1,11 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 const TermosDeUso = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32 pb-16 px-6">
+      <main className="pt-40 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">
             Termos de Uso

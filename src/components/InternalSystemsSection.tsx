@@ -27,12 +27,12 @@ const InternalSystemsSection = () => {
 
           {/* Content - Right side */}
           <div className="text-left flex-1 max-w-2xl order-1 lg:order-2">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sistemas Personalizados
             </span>
             <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-gray-900">
               Criamos o seu sistema interno{" "}
-              <span className="text-gradient-accent font-thin">100% personalizado</span>{" "}
+              <span className="text-[#1800AD] font-thin">100% personalizado</span>{" "}
               as suas necessidades.
             </h2>
             <p className="text-gray-600 text-lg mb-8">
@@ -43,20 +43,20 @@ const InternalSystemsSection = () => {
             {/* Features list */}
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <Database className="w-4 h-4 text-secondary" />
+                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
+                  <Database className="w-4 h-4 text-[#EB1614]" />
                 </div>
                 <span>Todos os dados em um só lugar</span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <Settings className="w-4 h-4 text-secondary" />
+                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
+                  <Settings className="w-4 h-4 text-[#EB1614]" />
                 </div>
                 <span>Processos automatizados e otimizados</span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
-                  <BarChart3 className="w-4 h-4 text-secondary" />
+                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
+                  <BarChart3 className="w-4 h-4 text-[#EB1614]" />
                 </div>
                 <span>Dashboards completos em tempo real</span>
               </li>
