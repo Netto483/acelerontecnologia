@@ -1,18 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import heroBackground from "@/assets/hero-background.png";
 
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section 
-      className="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center right',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden">
+      {/* Parallax Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url(${heroBackground})`,
+          backgroundPosition: 'center right',
+          transform: `translateY(${scrollY * 0.5}px)`,
+        }}
+      />
+
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/30" />
 
@@ -41,7 +54,7 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 animate-fade-in"
             style={{ animationDelay: '0.2s' }}
           >
-            Unifique dados espalhados. Automatize tarefas repetitivas. Posicione-se estrategicamente.
+            Unifique dados espalhados | Automatize tarefas repetitivas | Posicione-se estrategicamente.
           </p>
 
           {/* CTA Button */}

@@ -124,9 +124,9 @@ const ServicesSection = () => {
                   }}
                 >
                   {/* Glass Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} backdrop-blur-xl`} />
-                  <div className="absolute inset-0 bg-white/40 backdrop-blur-md" />
-                  <div className="absolute inset-0 border border-white/50 rounded-3xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 to-gray-400/30 backdrop-blur-xl" />
+                  <div className="absolute inset-0 bg-gray-100/60 backdrop-blur-md" />
+                  <div className="absolute inset-0 border border-gray-300/50 rounded-3xl" />
                   
                   {/* Content */}
                   <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">

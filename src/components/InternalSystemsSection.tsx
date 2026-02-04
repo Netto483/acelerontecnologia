@@ -43,21 +43,15 @@ const InternalSystemsSection = () => {
             {/* Features list */}
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
-                  <Database className="w-4 h-4 text-[#EB1614]" />
-                </div>
+                <Database className="w-5 h-5 text-[#EB1614]" />
                 <span>Todos os dados em um só lugar</span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
-                  <Settings className="w-4 h-4 text-[#EB1614]" />
-                </div>
+                <Settings className="w-5 h-5 text-[#EB1614]" />
                 <span>Processos automatizados e otimizados</span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
-                <div className="w-8 h-8 rounded-lg bg-[#EB1614]/10 flex items-center justify-center">
-                  <BarChart3 className="w-4 h-4 text-[#EB1614]" />
-                </div>
+                <BarChart3 className="w-5 h-5 text-[#EB1614]" />
                 <span>Dashboards completos em tempo real</span>
               </li>
             </ul>

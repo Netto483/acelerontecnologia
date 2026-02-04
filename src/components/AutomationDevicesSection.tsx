@@ -20,7 +20,7 @@ const AutomationDevicesSection = () => {
 
       <div className="max-w-7xl mx-auto relative">
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
           <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Para Supermercados e Frigoríficos
           </h2>
@@ -29,12 +29,12 @@ const AutomationDevicesSection = () => {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
-            <span className="text-[#1800AD] font-semibold text-sm uppercase tracking-wider">
+            <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sensores de Monitoramento Personalizados
             </span>
             <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
               Monitore a temperatura dos seus freezers de qualquer lugar,{" "}
-              <span className="text-[#1800AD] font-thin">em tempo real</span>
+              <span className="text-[#EB1614] font-thin">em tempo real</span>
             </h3>
             <p className="text-gray-400 text-lg mb-8">
               Evite perdas de produtos com o monitoramento contínuo de temperatura.
