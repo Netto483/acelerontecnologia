@@ -86,7 +86,7 @@ const HeroSection = () => {
         >
           Criamos{' '}
           <span className="text-primary font-thin">sites</span>,{' '}
-          <span className="text-secondary font-thin">sistemas internos</span>{' '}
+          <span className="text-[#1800AD] font-thin">sistemas internos</span>{' '}
           e{' '}
           <span className="relative inline-block">
             <span className="text-primary font-thin">Automações</span>

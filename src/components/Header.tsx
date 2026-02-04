@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import logoAceleron from "@/assets/logo-aceleron.png";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,17 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 px-6">
@@ -31,27 +44,36 @@ const Header = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#servicos" className={`font-subtitle transition-colors font-medium ${
-              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
-            }`}>
+            <button 
+              onClick={() => scrollToSection('servicos')} 
+              className={`font-subtitle transition-colors font-medium ${
+                isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+              }`}
+            >
               Serviços
-            </a>
-            <a href="#sobre" className={`font-subtitle transition-colors font-medium ${
-              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
-            }`}>
-              Sobre
-            </a>
-            <a href="#contato" className={`font-subtitle transition-colors font-medium ${
-              isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
-            }`}>
+            </button>
+            <button 
+              onClick={() => scrollToSection('case')} 
+              className={`font-subtitle transition-colors font-medium ${
+                isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+              }`}
+            >
+              Case
+            </button>
+            <button 
+              onClick={() => scrollToSection('contato')} 
+              className={`font-subtitle transition-colors font-medium ${
+                isScrolled ? "text-gray-600 hover:text-gray-900" : "text-white/80 hover:text-white"
+              }`}
+            >
               Contato
-            </a>
+            </button>
           </div>
 
           <Button 
             variant="default" 
             size="sm"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contato')}
           >
             Fale Conosco
           </Button>
