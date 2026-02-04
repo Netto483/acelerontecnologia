@@ -16,7 +16,7 @@ const InternalSystemsSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Image - Left side */}
           <div className="flex-1 flex justify-center lg:justify-start order-2 lg:order-1">
-            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/20">
+            <div className="rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)]">
               <img 
                 src={crmDashboard} 
                 alt="Dashboard CRM personalizado" 
