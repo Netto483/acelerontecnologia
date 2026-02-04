@@ -22,7 +22,7 @@ const AutomationDevicesSection = () => {
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            Dispositivos Eletrônicos Personalizados
+            Para Supermercados e Frigoríficos
           </h2>
         </div>
 

@@ -55,9 +55,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Contato</h4>
             <ul className="space-y-3 text-muted-foreground">
-              <li>contato@aceleron.com.br</li>
-              <li>(11) 99999-9999</li>
-              <li>São Paulo, SP</li>
+              <li>joaofirmino@aceleronai.com.br</li>
+              <li>(82) 991881260</li>
+              <li>Maceió - AL</li>
             </ul>
           </div>
         </div>
@@ -68,12 +68,12 @@ const Footer = () => {
             © {currentYear} Aceleron. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Política de Privacidade
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/termos-de-uso" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Termos de Uso
-            </a>
+            </Link>
           </div>
         </div>
       </div>
