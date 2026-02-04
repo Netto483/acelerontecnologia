@@ -9,7 +9,7 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 const faqs = [
   {
     question: "O que a Aceleron faz?",
-    answer: "A Aceleron é uma empresa de tecnologia especializada em criar soluções de software e hardware personalizadas para empresas. Desenvolvemos sites, sistemas internos e automações com inteligência artificial para otimizar processos e acelerar resultados."
+    answer: "A Aceleron é especializada em criar soluções de software e hardware personalizadas para empresas. Desenvolvemos sites, sistemas internos e automações com inteligência artificial para otimizar processos e acelerar resultados."
   },
   {
     question: "Quais tipos de sites vocês desenvolvem?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Como funciona a automação com I.A.?",
-    answer: "Implementamos soluções de inteligência artificial para automatizar tarefas repetitivas, análise de dados, atendimento ao cliente (chatbots), processamento de documentos e muito mais. Cada solução é personalizada conforme as necessidades do seu negócio."
+    answer: "Implementamos soluções de inteligência artificial para automatizar tarefas repetitivas, análise de dados, atendimento ao cliente, processamento de documentos e muito mais. Cada solução é personalizada conforme as necessidades do seu negócio."
   },
   {
     question: "Vocês desenvolvem sistemas internos personalizados?",

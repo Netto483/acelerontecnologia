@@ -9,6 +9,8 @@ import SitesEstrategicos from "./pages/SitesEstrategicos";
 import SistemasPersonalizados from "./pages/SistemasPersonalizados";
 import AutomacoesIA from "./pages/AutomacoesIA";
 import DispositivosPersonalizados from "./pages/DispositivosPersonalizados";
+import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
+import TermosDeUso from "./pages/TermosDeUso";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/sistemas-personalizados" element={<SistemasPersonalizados />} />
           <Route path="/automacoes-ia" element={<AutomacoesIA />} />
           <Route path="/dispositivos-personalizados" element={<DispositivosPersonalizados />} />
+          <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+          <Route path="/termos-de-uso" element={<TermosDeUso />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

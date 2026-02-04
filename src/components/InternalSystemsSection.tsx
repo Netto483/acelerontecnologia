@@ -33,7 +33,7 @@ const InternalSystemsSection = () => {
               className="group font-thin"
               onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Analisar Oportunidade
+              Saber Mais
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
