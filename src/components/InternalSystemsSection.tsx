@@ -8,7 +8,7 @@ const InternalSystemsSection = () => {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-20 px-6 bg-background transition-all duration-700 ${
+      className={`py-20 px-6 bg-white transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -30,33 +30,33 @@ const InternalSystemsSection = () => {
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
               Sistemas Personalizados
             </span>
-            <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+            <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-gray-900">
               Criamos o seu sistema interno{" "}
               <span className="text-gradient-accent font-thin">100% personalizado</span>{" "}
               as suas necessidades.
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-gray-600 text-lg mb-8">
               Desenvolvemos o sistema interno da sua empresa sob medida. Adaptado perfeitamente 
               aos processos dela, aumentando a eficiência e reduzindo dados dispersos.
             </p>
 
             {/* Features list */}
             <ul className="space-y-4 mb-8">
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Database className="w-4 h-4 text-white" />
+              <li className="flex items-center gap-3 text-gray-600">
+                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <Database className="w-4 h-4 text-secondary" />
                 </div>
                 <span>Todos os dados em um só lugar</span>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Settings className="w-4 h-4 text-white" />
+              <li className="flex items-center gap-3 text-gray-600">
+                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <Settings className="w-4 h-4 text-secondary" />
                 </div>
                 <span>Processos automatizados e otimizados</span>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <BarChart3 className="w-4 h-4 text-white" />
+              <li className="flex items-center gap-3 text-gray-600">
+                <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center">
+                  <BarChart3 className="w-4 h-4 text-secondary" />
                 </div>
                 <span>Dashboards completos em tempo real</span>
               </li>
@@ -69,11 +69,11 @@ const InternalSystemsSection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-foreground font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
+              className="inline-flex items-center gap-2 text-gray-900 font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
               Saber Mais
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground group-hover:bg-primary transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-primary transition-colors" />
             </a>
           </div>
         </div>
