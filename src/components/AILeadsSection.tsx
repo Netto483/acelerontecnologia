@@ -15,12 +15,12 @@ const AILeadsSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
-            <span className="text-[#1800AD] font-semibold text-sm uppercase tracking-wider">
+            <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Inteligência Artificial
             </span>
             <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
               Automatize o atendimento dos leads com{" "}
-              <span className="text-[#1800AD]">Inteligência Artificial</span>
+              <span className="text-[#EB1614] font-thin">Inteligência Artificial</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
               Utilize inteligência artificial para qualificar, nutrir e converter 
