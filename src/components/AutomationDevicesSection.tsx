@@ -26,19 +26,18 @@ const AutomationDevicesSection = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">
-              Para Distribuidoras e Supermercados
+              Sensores de Monitoramento Personalizados
             </span>
             <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
-              Automatize sua empresa com{" "}
-              <span className="text-gradient-accent font-thin">dispositivos personalizados</span>
+              Monitore a temperatura dos seus freezers de qualquer lugar,{" "}
+              <span className="text-gradient-accent font-thin">em tempo real</span>
             </h3>
             <p className="text-gray-400 text-lg mb-8">
-              Desenvolvemos hardware especializado e soluções IoT que transformam 
-              a maneira como sua empresa opera.
+              Evite perdas de produtos com o monitoramento contínuo de temperatura.
             </p>
 
             {/* Link style button */}
@@ -50,43 +49,19 @@ const AutomationDevicesSection = () => {
               }}
               className="inline-flex items-center gap-2 text-white font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
-              Quero um dispositivo personalizado
+              Quero monitorar meus produtos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white group-hover:bg-primary transition-colors" />
             </a>
           </div>
 
-          {/* Image - Right side with labels */}
+          {/* Image - Right side */}
           <div className="flex-1 flex justify-center lg:justify-start">
-            <div className="relative">
-              {/* Top label - Sensor de temperatura */}
-              <div className="absolute -top-[12px] -left-4 md:-left-8 flex items-center gap-1">
-                <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
-                  Sensor de temperatura e humidade
-                </span>
-                <div className="flex items-center">
-                  <div className="w-4 md:w-6 h-px bg-gray-400" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-                </div>
-              </div>
-              
-              <img 
-                src={iotDevice} 
-                alt="Dispositivo IoT personalizado" 
-                className="w-64 md:w-80 lg:w-96 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
-              />
-              
-              {/* Bottom label - Envia dados */}
-              <div className="absolute -bottom-[12px] -right-2 md:-right-6 flex items-center gap-1">
-                <div className="flex items-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-                  <div className="w-4 md:w-6 h-px bg-gray-400" />
-                </div>
-                <span className="text-white font-medium text-sm md:text-base whitespace-nowrap">
-                  Envia dados para qualquer dispositivo
-                </span>
-              </div>
-            </div>
+            <img 
+              src={iotDevice} 
+              alt="Dispositivo IoT personalizado" 
+              className="w-80 md:w-96 lg:w-[500px] h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+            />
           </div>
         </div>
       </div>
