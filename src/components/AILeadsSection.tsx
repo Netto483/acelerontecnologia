@@ -64,33 +64,23 @@ const AILeadsSection = () => {
             </a>
           </div>
 
-          {/* Visual - Right side */}
+          {/* Visual - Right side: WhatsApp-style chat */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative w-64 md:w-80 lg:w-96 h-64 md:h-80 lg:h-96">
-              {/* Animated circles */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full rounded-full border border-primary/20 animate-pulse-slow" />
-              </div>
-              <div className="absolute inset-4 flex items-center justify-center">
-                <div className="w-full h-full rounded-full border border-secondary/20 animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
-              </div>
-              <div className="absolute inset-8 flex items-center justify-center">
-                <div className="w-full h-full rounded-full border border-primary/30 animate-pulse-slow" style={{ animationDelay: '1s' }} />
-              </div>
-              
-              {/* Center icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-2xl shadow-primary/30">
-                  <Bot className="w-12 h-12 md:w-16 md:h-16 text-primary-foreground" />
+            <div className="flex flex-col gap-4 w-full max-w-sm">
+              {/* User message - right aligned */}
+              <div className="flex justify-end">
+                <div className="bg-[#DCF8C6] text-gray-900 px-4 py-2 rounded-2xl rounded-tr-sm max-w-[80%] shadow-md">
+                  <p className="text-base">Olá</p>
+                  <span className="text-xs text-gray-500 float-right mt-1 ml-2">10:30</span>
                 </div>
               </div>
-
-              {/* Floating elements */}
-              <div className="absolute top-4 right-4 w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center animate-float">
-                <MessageSquare className="w-6 h-6 text-secondary" />
-              </div>
-              <div className="absolute bottom-8 left-4 w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
-                <Zap className="w-5 h-5 text-primary" />
+              
+              {/* Bot response - left aligned */}
+              <div className="flex justify-start">
+                <div className="bg-white text-gray-900 px-4 py-2 rounded-2xl rounded-tl-sm max-w-[90%] shadow-md border border-gray-100">
+                  <p className="text-base">Olá, sou a Ana, atendente da Clínica Mais Cabelo. Como posso te ajudar?😁</p>
+                  <span className="text-xs text-gray-500 float-right mt-1 ml-2">10:30</span>
+                </div>
               </div>
             </div>
           </div>

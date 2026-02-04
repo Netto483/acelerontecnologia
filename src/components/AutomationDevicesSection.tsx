@@ -8,20 +8,20 @@ const AutomationDevicesSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 px-6 relative overflow-hidden transition-all duration-700 bg-white ${
+      className={`py-24 px-6 relative overflow-hidden transition-all duration-700 bg-[#191518] ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 -left-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 -left-48 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Para Supermercados e Frigoríficos
           </h2>
         </div>
@@ -32,11 +32,11 @@ const AutomationDevicesSection = () => {
             <span className="text-[#1800AD] font-semibold text-sm uppercase tracking-wider">
               Sensores de Monitoramento Personalizados
             </span>
-            <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-gray-900">
+            <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
               Monitore a temperatura dos seus freezers de qualquer lugar,{" "}
               <span className="text-[#1800AD] font-thin">em tempo real</span>
             </h3>
-            <p className="text-gray-600 text-lg mb-8">
+            <p className="text-gray-400 text-lg mb-8">
               Evite perdas de produtos com o monitoramento contínuo de temperatura.
             </p>
 
@@ -47,11 +47,11 @@ const AutomationDevicesSection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-gray-900 font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
+              className="inline-flex items-center gap-2 text-white font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
               Quero monitorar meus produtos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-primary transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white group-hover:bg-primary transition-colors" />
             </a>
           </div>
 

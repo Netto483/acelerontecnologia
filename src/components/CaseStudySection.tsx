@@ -35,12 +35,12 @@ const CaseStudySection = () => {
             <span className="text-[#1800AD] font-semibold text-sm uppercase tracking-wider">
               Case de Sucesso
             </span>
-            <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-6 leading-tight">
+            <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-6 leading-tight text-gray-900">
               O Instituto Meca economizou mais de{" "}
               <span className="text-[#1800AD]">R$ 30.000</span>{" "}
               por ano após implementar IA no atendimento
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-gray-600 text-lg mb-8">
               Descubra como a Inteligência Artificial pode aumentar a produtividade 
               da sua operação e reduzir custos.
             </p>
@@ -52,11 +52,11 @@ const CaseStudySection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-foreground font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
+              className="inline-flex items-center gap-2 text-gray-900 font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
               Quero resultados como esse
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground group-hover:bg-primary transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-primary transition-colors" />
             </a>
           </div>
         </div>
