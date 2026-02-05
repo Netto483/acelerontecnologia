@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src={logoAceleron} 
                 alt="Aceleron Tecnologias Logo" 
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </div>
             <p className="text-black max-w-md leading-relaxed">
