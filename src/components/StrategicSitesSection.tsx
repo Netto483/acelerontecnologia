@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import crmDashboard from "@/assets/crm-dashboard.png";
+import strategicSiteExample from "@/assets/strategic-site-example.png";
 
 const StrategicSitesSection = () => {
   const { ref, isVisible } = useScrollReveal();
