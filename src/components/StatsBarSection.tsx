@@ -1,41 +1,50 @@
- import { Star, GraduationCap, MapPin, Clock, CheckSquare } from "lucide-react";
+ import { Shield, CalendarCheck, Clock, Headphones, DollarSign } from "lucide-react";
+ import statsBackground from "@/assets/stats-background.png";
  
  const StatsBarSection = () => {
    const stats = [
      {
-       icon: Star,
-       label: "Satisfação:",
-       value: "98%",
-     },
-     {
-       icon: GraduationCap,
-       label: "Projetos Entregues:",
-       value: "+50",
-     },
-     {
-       icon: MapPin,
-       label: "Atendimento:",
-       value: "Todo Brasil",
-     },
-     {
-       icon: Clock,
-       label: "Tempo Médio:",
+       icon: Shield,
+       label: "Garantia:",
        value: "30 dias",
      },
      {
-       icon: CheckSquare,
-       label: "Suporte:",
-       value: "Contínuo",
+       icon: CalendarCheck,
+       label: "Acompanhamento de entrega:",
+       value: "Semanal",
+     },
+     {
+       icon: Clock,
+       label: "Tempo de entrega:",
+       value: "1 semana - 3 meses",
+     },
+     {
+       icon: Headphones,
+       label: "Suporte para dúvidas:",
+       value: "24/7",
+     },
+     {
+       icon: DollarSign,
+       label: "Preços:",
+       value: "a partir de R$1500,00",
      },
    ];
  
    return (
-     <section className="h-[98px] bg-[#0f172a] flex items-center">
-       <div className="max-w-7xl mx-auto w-full px-6">
+     <section className="h-[98px] relative flex items-center overflow-hidden">
+       {/* Background image */}
+       <div 
+         className="absolute inset-0 bg-cover bg-center"
+         style={{ backgroundImage: `url(${statsBackground})` }}
+       />
+       {/* Dark overlay */}
+       <div className="absolute inset-0 bg-black/50" />
+       
+       <div className="max-w-7xl mx-auto w-full px-6 relative z-10">
          <div className="flex items-center justify-between gap-8">
            {stats.map((stat, index) => (
              <div key={index} className="flex items-center gap-3">
-               <div className="w-12 h-12 rounded-lg bg-[#1e293b] flex items-center justify-center">
+               <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
                  <stat.icon className="w-5 h-5 text-white" />
                </div>
                <div className="flex flex-col">
