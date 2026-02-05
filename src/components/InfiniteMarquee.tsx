@@ -1,3 +1,5 @@
+import statsBackground from "@/assets/stats-background.png";
+
 const phrases = [
   { bold: "Corte", rest: " gastos desnecessários", thinPart: "" },
   { bold: "Automatize", rest: " ", thinPart: "processos repetitivos" },
@@ -8,14 +10,22 @@ const phrases = [
 
 const InfiniteMarquee = () => {
   return (
-    <section className="pt-24 pb-8 bg-[#F5F4F3] overflow-hidden">
-      <div className="relative flex">
+    <section className="h-[98px] relative flex items-center overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${statsBackground})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+      
+      <div className="relative z-10 flex w-full">
         {/* First copy */}
         <div className="flex animate-marquee whitespace-nowrap">
           {phrases.map((phrase, index) => (
             <span
               key={index}
-              className="mx-8 md:mx-12 text-gray-900 font-subtitle text-lg md:text-xl lg:text-2xl"
+              className="mx-8 md:mx-12 text-white font-subtitle text-lg md:text-xl lg:text-2xl"
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>
@@ -28,7 +38,7 @@ const InfiniteMarquee = () => {
           {phrases.map((phrase, index) => (
             <span
               key={`copy-${index}`}
-              className="mx-8 md:mx-12 text-gray-900 font-subtitle text-lg md:text-xl lg:text-2xl"
+              className="mx-8 md:mx-12 text-white font-subtitle text-lg md:text-xl lg:text-2xl"
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>

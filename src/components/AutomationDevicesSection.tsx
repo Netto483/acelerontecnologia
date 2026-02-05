@@ -8,7 +8,7 @@ const AutomationDevicesSection = () => {
   return (
     <section 
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-24 px-6 relative overflow-hidden transition-all duration-700 bg-[#191518] ${
+      className={`py-12 px-6 relative overflow-hidden transition-all duration-700 bg-[#191518] ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -19,17 +19,17 @@ const AutomationDevicesSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Content - Left side */}
-          <div className="text-left flex-1 max-w-2xl">
+          <div className="text-left flex-1 max-w-xl">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sensores de Monitoramento Personalizados
             </span>
-            <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-4 text-white">
+            <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold mt-2 mb-3 text-white">
               Monitore a temperatura dos seus freezers de qualquer lugar,{" "}
               <span className="text-[#EB1614] font-thin">em tempo real</span>
             </h3>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-gray-400 text-base mb-6">
               Evite perdas de produtos com o monitoramento contínuo de temperatura.
             </p>
 
@@ -40,10 +40,10 @@ const AutomationDevicesSection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-white font-thin text-lg group hover:text-primary transition-colors relative cursor-pointer"
+              className="inline-flex items-center gap-2 text-white font-thin text-base group hover:text-primary transition-colors relative cursor-pointer"
             >
               Quero monitorar meus produtos
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white group-hover:bg-primary transition-colors" />
             </a>
           </div>
@@ -53,7 +53,7 @@ const AutomationDevicesSection = () => {
             <img 
               src={iotDevice} 
               alt="Dispositivo IoT personalizado" 
-              className="w-80 md:w-96 lg:w-[500px] h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              className="w-64 md:w-72 lg:w-80 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
             />
           </div>
         </div>
