@@ -5,6 +5,7 @@ import AILeadsSection from "@/components/AILeadsSection";
 import InfiniteMarquee from "@/components/InfiniteMarquee";
 import CaseStudySection from "@/components/CaseStudySection";
 import AutomationDevicesSection from "@/components/AutomationDevicesSection";
+ import FreezerMonitorSection from "@/components/FreezerMonitorSection";
 import ServicesSection from "@/components/ServicesSection";
 import FAQSection from "@/components/FAQSection";
 import ContactFormSection from "@/components/ContactFormSection";
@@ -22,6 +23,7 @@ const Index = () => {
         <AILeadsSection />
         <CaseStudySection />
         <InfiniteMarquee />
+         <FreezerMonitorSection />
         <AutomationDevicesSection />
         <ServicesSection />
         <FAQSection />

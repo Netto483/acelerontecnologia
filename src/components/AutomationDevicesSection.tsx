@@ -19,13 +19,6 @@ const AutomationDevicesSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Section Title */}
-        <div className="text-left mb-16">
-          <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            Para Supermercados e Frigoríficos
-          </h2>
-        </div>
-
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
