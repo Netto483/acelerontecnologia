@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import crmDashboard from "@/assets/crm-dashboard.png";
+import strategicSiteExample from "@/assets/strategic-site-example.png";
 
 const StrategicSitesSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -43,7 +43,7 @@ const StrategicSitesSection = () => {
           {/* Image - Right side */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img 
-              src={crmDashboard} 
+              src={strategicSiteExample} 
               alt="Site estratégico com dashboard de conversão" 
               className="w-full max-w-lg rounded-2xl shadow-2xl"
             />
