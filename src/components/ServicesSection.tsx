@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import dispositivosCard from "@/assets/dispositivos-card.png";
 import sitesCard from "@/assets/sites-card.png";
+import sistemasCard from "@/assets/sistemas-card.png";
 
 const services = [
   {
@@ -17,7 +18,7 @@ const services = [
     description: "Soluções sob medida para otimizar processos e aumentar a eficiência da sua empresa.",
     link: "/sistemas-personalizados",
     gradient: "from-emerald-500/20 to-teal-500/20",
-    image: null,
+    image: sistemasCard,
   },
   {
     title: "Automações com I.A.",
