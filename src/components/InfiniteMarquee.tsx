@@ -25,7 +25,7 @@ const InfiniteMarquee = () => {
           {phrases.map((phrase, index) => (
             <span
               key={index}
-              className="mx-8 md:mx-12 text-white font-subtitle text-lg md:text-xl lg:text-2xl"
+              className="mx-6 md:mx-10 text-white font-subtitle text-sm md:text-base lg:text-lg"
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>
@@ -38,7 +38,7 @@ const InfiniteMarquee = () => {
           {phrases.map((phrase, index) => (
             <span
               key={`copy-${index}`}
-              className="mx-8 md:mx-12 text-white font-subtitle text-lg md:text-xl lg:text-2xl"
+              className="mx-6 md:mx-10 text-white font-subtitle text-sm md:text-base lg:text-lg"
             >
               <span className="font-bold">#{phrase.bold}</span>
               <span className="font-normal">{phrase.rest}</span>

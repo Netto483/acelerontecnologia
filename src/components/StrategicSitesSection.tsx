@@ -34,7 +34,7 @@ const StrategicSitesSection = () => {
               href="/sites-estrategicos"
               className="inline-flex items-center gap-2 text-gray-900 font-semibold text-lg group hover:text-[#EB1614] transition-colors relative cursor-pointer"
             >
-              Conheça nossos sites estratégicos
+              Quero um site estratégico para minha empresa
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-[#EB1614] transition-colors" />
             </a>

@@ -1,36 +1,66 @@
- import useScrollReveal from "@/hooks/useScrollReveal";
- import freezerBackground from "@/assets/freezer-background.png";
- 
- const FreezerMonitorSection = () => {
-   const { ref, isVisible } = useScrollReveal();
- 
-   return (
-     <section 
-       ref={ref as React.RefObject<HTMLElement>}
-       className={`h-[490px] relative flex items-center overflow-hidden transition-all duration-700 ${
-         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-       }`}
-     >
-       {/* Background image */}
-       <div 
-         className="absolute inset-0 bg-cover bg-center"
-         style={{ backgroundImage: `url(${freezerBackground})` }}
-       />
-       {/* Dark overlay */}
-       <div className="absolute inset-0 bg-black/60" />
-       
-       <div className="max-w-7xl mx-auto w-full px-6 relative z-10">
-         <div className="max-w-3xl">
-           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-             Para Supermercados, Frigoríficos e Distribuidoras alimentícias
-           </h2>
-           <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">
-             Freezers não escolhem horário para quebrar. Durante a noite, um simples desligamento pode destruir todo o estoque congelado antes do primeiro funcionário chegar. Quando o problema é percebido, o prejuízo já está feito.
-           </p>
-         </div>
-       </div>
-     </section>
-   );
- };
- 
- export default FreezerMonitorSection;
+import { useEffect, useState } from "react";
+import useScrollReveal from "@/hooks/useScrollReveal";
+import freezerBackground from "@/assets/freezer-background.png";
+
+const FreezerMonitorSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`h-[320px] relative flex items-center overflow-hidden transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      {/* Parallax Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${freezerBackground})`,
+          transform: `translateY(${scrollY * 0.15}px)`,
+        }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+      
+      <div className="max-w-7xl mx-auto w-full px-6 relative z-10">
+        {/* Small label */}
+        <span className="text-[#EB1614] font-semibold text-xs uppercase tracking-wider mb-3 block">
+          Automação eletrônica
+        </span>
+        
+        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-10">
+          {/* Title - Left side */}
+          <div className="flex-1">
+            <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
+              Para <span className="font-thin">Supermercados</span>,{" "}
+              <span className="font-thin">Frigoríficos</span> e{" "}
+              <span className="font-thin">Distribuidoras alimentícias</span>
+            </h2>
+          </div>
+          
+          {/* Vertical divider */}
+          <div className="hidden md:block w-px h-24 bg-white/30" />
+          
+          {/* Text - Right side */}
+          <div className="flex-1">
+            <p className="font-subtitle text-sm md:text-base text-gray-200 leading-relaxed font-light">
+              Freezers não escolhem horário para quebrar. Durante a noite, um simples desligamento pode destruir todo o estoque congelado antes do primeiro funcionário chegar. Quando o problema é percebido, o prejuízo já está feito.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FreezerMonitorSection;
