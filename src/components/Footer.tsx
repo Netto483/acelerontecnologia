@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoAceleron from "@/assets/logo-aceleron.png";
+import logoFooter from "@/assets/logo-footer.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,9 +12,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src={logoAceleron} 
+                src={logoFooter} 
                 alt="Aceleron Tecnologias Logo" 
-                className="h-24 w-auto"
+                className="h-32 w-auto"
               />
             </div>
             <p className="text-black max-w-md leading-relaxed">

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logoAceleron from "@/assets/logo-aceleron.png";
+import aoIcon from "@/assets/ao-icon.png";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -37,9 +37,9 @@ const Header = () => {
         }`}>
           <Link to="/" className="flex items-center">
             <img 
-              src={logoAceleron} 
+              src={aoIcon} 
               alt="Aceleron Logo" 
-              className="h-14 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
           

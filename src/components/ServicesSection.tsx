@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import dispositivosCard from "@/assets/dispositivos-card.png";
+import sitesCard from "@/assets/sites-card.png";
 
 const services = [
   {
@@ -9,7 +10,7 @@ const services = [
     description: "Desenvolvemos sites que convertem visitantes em clientes com design focado em resultados.",
     link: "/sites-estrategicos",
     gradient: "from-blue-500/20 to-purple-500/20",
-    image: null,
+    image: sitesCard,
   },
   {
     title: "Sistemas Personalizados",
