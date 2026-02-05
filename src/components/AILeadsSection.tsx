@@ -30,21 +30,15 @@ const AILeadsSection = () => {
             {/* Features list */}
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 text-white" />
-                </div>
+                <MessageSquare className="w-5 h-5 text-[#EB1614]" />
                 <span>Respostas instantâneas e personalizadas</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-white" />
-                </div>
+                <Bot className="w-5 h-5 text-[#EB1614]" />
                 <span>Qualificação automática de leads</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Zap className="w-4 h-4 text-white" />
-                </div>
+                <Zap className="w-5 h-5 text-[#EB1614]" />
                 <span>Integração com WhatsApp e outras plataformas</span>
               </li>
             </ul>
@@ -66,20 +60,20 @@ const AILeadsSection = () => {
 
           {/* Visual - Right side: WhatsApp-style chat */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="flex flex-col gap-4 w-full max-w-sm">
+            <div className="flex flex-col gap-5 w-full max-w-md">
               {/* User message - right aligned */}
               <div className="flex justify-end">
-                <div className="bg-[#DCF8C6] text-gray-900 px-4 py-2 rounded-2xl rounded-tr-sm max-w-[80%] shadow-md">
-                  <p className="text-base">Olá</p>
-                  <span className="text-xs text-gray-500 float-right mt-1 ml-2">10:30</span>
+                <div className="bg-[#DCF8C6] text-gray-900 px-5 py-3 rounded-2xl rounded-tr-sm max-w-[80%] shadow-lg">
+                  <p className="text-lg">Olá</p>
+                  <span className="text-sm text-gray-500 float-right mt-1 ml-3">10:30</span>
                 </div>
               </div>
               
               {/* Bot response - left aligned */}
               <div className="flex justify-start">
-                <div className="bg-white text-gray-900 px-4 py-2 rounded-2xl rounded-tl-sm max-w-[90%] shadow-md border border-gray-100">
-                  <p className="text-base">Olá, sou a Ana, atendente da Clínica Mais Cabelo. Como posso te ajudar?😁</p>
-                  <span className="text-xs text-gray-500 float-right mt-1 ml-2">10:30</span>
+                <div className="bg-white text-gray-900 px-5 py-3 rounded-2xl rounded-tl-sm max-w-[90%] shadow-lg border border-gray-100">
+                  <p className="text-lg">Olá, sou a Ana, atendente da Clínica Mais Cabelo. Como posso te ajudar?😁</p>
+                  <span className="text-sm text-gray-500 float-right mt-1 ml-3">10:30</span>
                 </div>
               </div>
             </div>
