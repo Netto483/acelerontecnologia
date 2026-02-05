@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contato" className="py-16 px-6 border-t border-border/50 bg-[#F5F4F3]">
+    <footer id="contato" className="py-16 px-6 border-t border-black/20 bg-[#F5F4F3]">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -16,9 +16,9 @@ const Footer = () => {
                 alt="Aceleron Logo" 
                 className="h-10 w-auto"
               />
-              <span className="font-display font-bold text-xl">Aceleron</span>
+              <span className="font-display font-bold text-xl text-black">Aceleron</span>
             </div>
-            <p className="text-muted-foreground max-w-md leading-relaxed">
+            <p className="text-black max-w-md leading-relaxed">
               Criamos soluções de hardware e software que transformam empresas. 
               Sites, sistemas internos e automação com I.A. para acelerar seu negócio.
             </p>
@@ -26,25 +26,25 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Serviços</h4>
+            <h4 className="font-display font-semibold mb-4 text-black">Serviços</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/sites-estrategicos" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/sites-estrategicos" className="text-black hover:text-black/70 transition-colors">
                   Sites Estratégicos
                 </Link>
               </li>
               <li>
-                <Link to="/sistemas-personalizados" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/sistemas-personalizados" className="text-black hover:text-black/70 transition-colors">
                   Sistemas Personalizados
                 </Link>
               </li>
               <li>
-                <Link to="/automacoes-ia" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/automacoes-ia" className="text-black hover:text-black/70 transition-colors">
                   Automações com I.A.
                 </Link>
               </li>
               <li>
-                <Link to="/dispositivos-personalizados" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/dispositivos-personalizados" className="text-black hover:text-black/70 transition-colors">
                   Dispositivos Personalizados
                 </Link>
               </li>
@@ -53,8 +53,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Contato</h4>
-            <ul className="space-y-3 text-muted-foreground">
+            <h4 className="font-display font-semibold mb-4 text-black">Contato</h4>
+            <ul className="space-y-3 text-black">
               <li>joaofirmino@aceleronai.com.br</li>
               <li>(82) 991881260</li>
               <li>Maceió - AL</li>
@@ -63,15 +63,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-black/20 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-black">
             © {currentYear} Aceleron. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/politica-de-privacidade" className="text-sm text-black hover:text-black/70 transition-colors">
               Política de Privacidade
             </Link>
-            <Link to="/termos-de-uso" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/termos-de-uso" className="text-sm text-black hover:text-black/70 transition-colors">
               Termos de Uso
             </Link>
           </div>

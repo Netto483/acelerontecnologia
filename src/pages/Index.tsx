@@ -9,6 +9,7 @@ import ServicesSection from "@/components/ServicesSection";
 import FAQSection from "@/components/FAQSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
+import StatsBarSection from "@/components/StatsBarSection";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <InternalSystemsSection />
+        <StatsBarSection />
         <AILeadsSection />
         <CaseStudySection />
         <InfiniteMarquee />
