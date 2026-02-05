@@ -1,32 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import freezerBackground from "@/assets/freezer-background.png";
 
 const FreezerMonitorSection = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [parallaxOffset, setParallaxOffset] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const scrollProgress = -rect.top;
+        setParallaxOffset(scrollProgress * 0.15);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section 
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={(el) => {
+        (ref as React.MutableRefObject<HTMLElement | null>).current = el;
+        (sectionRef as React.MutableRefObject<HTMLElement | null>).current = el;
+      }}
       className={`h-[320px] relative flex items-center overflow-hidden transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       {/* Parallax Background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-[-50px] bg-cover bg-center"
         style={{ 
           backgroundImage: `url(${freezerBackground})`,
-          transform: `translateY(${scrollY * 0.15}px)`,
+          transform: `translateY(${parallaxOffset}px)`,
         }}
       />
       {/* Dark overlay */}

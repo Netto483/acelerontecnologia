@@ -13,10 +13,9 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <img 
                 src={logoAceleron} 
-                alt="Aceleron Logo" 
-                className="h-10 w-auto"
+                alt="Aceleron Tecnologias Logo" 
+                className="h-16 w-auto"
               />
-              <span className="font-display font-bold text-xl text-black">Aceleron</span>
             </div>
             <p className="text-black max-w-md leading-relaxed">
               Criamos soluções de hardware e software que transformam empresas. 

@@ -12,6 +12,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
 import StatsBarSection from "@/components/StatsBarSection";
+import SensorStatsSection from "@/components/SensorStatsSection";
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
         <StrategicSitesSection />
         <FreezerMonitorSection />
         <AutomationDevicesSection />
+        <SensorStatsSection />
         <ServicesSection />
         <FAQSection />
         <ContactFormSection />
