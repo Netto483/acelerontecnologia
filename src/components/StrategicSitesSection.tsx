@@ -43,7 +43,7 @@ const StrategicSitesSection = () => {
           {/* Image - Right side */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img 
-              src={crmDashboard} 
+              src={strategicSiteExample} 
               alt="Site estratégico com dashboard de conversão" 
               className="w-full max-w-lg rounded-2xl shadow-2xl"
             />
