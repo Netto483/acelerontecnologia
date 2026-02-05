@@ -8,7 +8,7 @@ const InternalSystemsSection = () => {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`py-20 px-6 bg-white transition-all duration-700 ${
+      className={`py-20 px-6 bg-[#F5F4F3] transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -32,7 +32,7 @@ const InternalSystemsSection = () => {
             </span>
             <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-gray-900">
               Criamos o seu sistema interno{" "}
-              <span className="text-[#1800AD] font-thin">100% personalizado</span>{" "}
+              <span className="text-[#EB1614] font-thin">100% personalizado</span>{" "}
               as suas necessidades.
             </h2>
             <p className="text-gray-600 text-lg mb-8">

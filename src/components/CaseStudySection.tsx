@@ -9,7 +9,7 @@ const CaseStudySection = () => {
     <section
       id="case"
       ref={ref as React.RefObject<HTMLElement>}
-      className={`pt-32 pb-20 px-6 bg-white transition-all duration-700 ${
+      className={`pt-32 pb-20 px-6 bg-[#F5F4F3] transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -33,11 +33,11 @@ const CaseStudySection = () => {
           {/* Content - Right side */}
           <div className="text-left flex-1 max-w-xl">
             <span className="text-[#1800AD] font-semibold text-sm uppercase tracking-wider">
-              Case de Sucesso
+              <span className="text-[#EB1614]">Case de Sucesso</span>
             </span>
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-bold mt-3 mb-6 leading-tight text-gray-900">
               O Instituto Meca economizou mais de{" "}
-              <span className="text-[#1800AD]">R$ 30.000</span>{" "}
+              <span className="text-[#EB1614]">R$ 30.000</span>{" "}
               por ano após implementar IA no atendimento
             </h2>
             <p className="text-gray-600 text-lg mb-8">
