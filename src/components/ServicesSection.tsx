@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import dispositivosCard from "@/assets/dispositivos-card.png";
 
 const services = [
   {
@@ -8,24 +9,28 @@ const services = [
     description: "Desenvolvemos sites que convertem visitantes em clientes com design focado em resultados.",
     link: "/sites-estrategicos",
     gradient: "from-blue-500/20 to-purple-500/20",
+    image: null,
   },
   {
     title: "Sistemas Personalizados",
     description: "Soluções sob medida para otimizar processos e aumentar a eficiência da sua empresa.",
     link: "/sistemas-personalizados",
     gradient: "from-emerald-500/20 to-teal-500/20",
+    image: null,
   },
   {
     title: "Automações com I.A.",
     description: "Inteligência artificial aplicada para automatizar tarefas e multiplicar resultados.",
     link: "/automacoes-ia",
     gradient: "from-orange-500/20 to-red-500/20",
+    image: null,
   },
   {
     title: "Dispositivos Personalizados",
     description: "Hardware IoT sob medida para monitoramento e automação do seu negócio.",
     link: "/dispositivos-personalizados",
     gradient: "from-violet-500/20 to-pink-500/20",
+    image: dispositivosCard,
   },
 ];
 
@@ -124,24 +129,41 @@ const ServicesSection = () => {
                   }}
                 >
                   {/* Glass Background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 to-gray-400/30 backdrop-blur-xl" />
-                  <div className="absolute inset-0 bg-gray-100/60 backdrop-blur-md" />
+                  {service.image ? (
+                    <>
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+                      />
+                      <div className="absolute inset-0 bg-black/40 rounded-3xl" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 to-gray-400/30 backdrop-blur-xl" />
+                      <div className="absolute inset-0 bg-gray-100/60 backdrop-blur-md" />
+                    </>
+                  )}
                   <div className="absolute inset-0 border border-gray-300/50 rounded-3xl" />
                   
                   {/* Content */}
                   <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
-                    <h3 className={`font-subtitle font-bold text-gray-900 mb-3 transition-all duration-300 ${
+                    <h3 className={`font-subtitle font-bold mb-3 transition-all duration-300 ${
                       isCenter ? "text-2xl md:text-3xl" : "text-xl"
-                    }`}>
+                    } ${service.image ? "text-white" : "text-gray-900"}`}>
                       {service.title}
                     </h3>
                     {isCenter && (
-                      <p className="text-gray-700 text-base md:text-lg leading-relaxed animate-fade-in">
+                      <p className={`text-base md:text-lg leading-relaxed animate-fade-in ${
+                        service.image ? "text-white/90" : "text-gray-700"
+                      }`}>
                         {service.description}
                       </p>
                     )}
                     {isCenter && (
-                      <div className="mt-6 inline-flex items-center gap-2 text-primary font-semibold animate-fade-in">
+                      <div className={`mt-6 inline-flex items-center gap-2 font-semibold animate-fade-in ${
+                        service.image ? "text-white" : "text-primary"
+                      }`}>
                         Saiba mais
                         <ChevronRight className="w-5 h-5" />
                       </div>
