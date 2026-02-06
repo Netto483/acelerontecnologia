@@ -15,7 +15,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
       {/* Parallax Background */}
       <div 
         className="absolute inset-0 bg-cover bg-no-repeat"
@@ -27,13 +27,13 @@ const HeroSection = () => {
       />
 
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/40 md:bg-black/30" />
 
       <div className="relative max-w-7xl mx-auto w-full">
         <div className="max-w-3xl text-left">
           {/* Main Headline */}
           <h1 
-            className="font-subtitle text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in text-white"
+            className="font-subtitle text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 animate-fade-in text-white"
             style={{ animationDelay: '0.1s' }}
           >
             Criamos{' '}
@@ -42,7 +42,7 @@ const HeroSection = () => {
             e{' '}
             <span className="relative inline-block">
               <span className="font-thin">Automações</span>
-              <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
+              <svg className="absolute -bottom-1 md:-bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M2 6C50 2 150 2 198 6" stroke="white" strokeWidth="3" strokeLinecap="round"/>
               </svg>
             </span>{' '}
@@ -51,7 +51,7 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 animate-fade-in"
+            className="text-base md:text-xl text-white/80 max-w-2xl mb-8 md:mb-10 animate-fade-in"
             style={{ animationDelay: '0.2s' }}
           >
             Unifique dados espalhados | Automatize tarefas repetitivas | Posicione-se estrategicamente.
@@ -64,11 +64,11 @@ const HeroSection = () => {
           >
             <Button 
               variant="hero" 
-              className="group font-thin"
+              className="group font-thin text-sm md:text-base"
               onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Falar com Especialista
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
