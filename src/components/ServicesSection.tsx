@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import dispositivosCard from "@/assets/dispositivos-card.png";
 import sitesCard from "@/assets/sites-card.png";
 import sistemasCard from "@/assets/sistemas-card.png";
+import automacoesIaCard from "@/assets/automacoes-ia-card.png";
 
 const services = [
   {
@@ -25,7 +26,7 @@ const services = [
     description: "Inteligência artificial aplicada para automatizar tarefas e multiplicar resultados.",
     link: "/automacoes-ia",
     gradient: "from-orange-500/20 to-red-500/20",
-    image: null,
+    image: automacoesIaCard,
   },
   {
     title: "Dispositivos Personalizados",
