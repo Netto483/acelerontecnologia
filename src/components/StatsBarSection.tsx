@@ -2,10 +2,12 @@ import { Shield, CalendarCheck, Clock, Headphones, DollarSign } from "lucide-rea
 import statsBackground from "@/assets/stats-background.png";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsMobile, useIsTablet } from "@/hooks/use-mobile";
 
 const StatsBarSection = () => {
   const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+  const showCarousel = isMobile || isTablet;
   
   const stats = [
     {
@@ -58,8 +60,8 @@ const StatsBarSection = () => {
       <div className="absolute inset-0 bg-black/50" />
       
       <div className="max-w-7xl mx-auto w-full px-4 md:px-6 relative z-10">
-        {/* Mobile: Carousel */}
-        {isMobile ? (
+        {/* Mobile/Tablet: Carousel */}
+        {showCarousel ? (
           <Carousel
             opts={{
               align: "start",
