@@ -72,6 +72,32 @@ const SitesEstrategicos = () => {
           </div>
         </section>
 
+        {/* Seção "Seu site não passa credibilidade" */}
+        <section className="h-[320px] px-6 flex items-center" style={{ backgroundColor: '#191518' }}>
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              {/* Título - Esquerda */}
+              <div className="flex-1 text-left">
+                <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight">
+                  Seu site não passa credibilidade
+                </h2>
+              </div>
+
+              {/* Linha Vertical Divisória */}
+              <div className="hidden md:block w-px h-32 bg-white/30" />
+
+              {/* Texto - Direita */}
+              <div className="flex-1 text-left">
+                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed">
+                  Um site sem estratégia desperdiça tráfego, atrai leads que não convertem e gera contatos totalmente desqualificados. Pior: ele não transmite confiança nem credibilidade.
+                  <br /><br />
+                  O resultado é um ciclo de vendas mais longo, mais caro e um time comercial sobrecarregado, perdendo tempo explicando o básico para quem ainda não está pronto para comprar. Enquanto isso, oportunidades reais escorrem para o concorrente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Content Section */}
         <div className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
