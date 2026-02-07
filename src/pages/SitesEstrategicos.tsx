@@ -143,16 +143,16 @@ const SitesEstrategicos = () => {
             </div>
 
             {/* Título */}
-            <h2 className="font-subtitle text-2xl md:text-4xl font-semibold text-gray-900 text-center mb-12">
-              Converta Leads em Clientes{" "}
-              <span className="text-[#EB1614] font-thin italic">com a sua página</span>
+            <h2 className="font-subtitle text-2xl md:text-4xl text-gray-900 text-center mb-12">
+              <span className="font-thin">Converta Leads em Clientes</span>{" "}
+              <span className="text-[#EB1614]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>com a sua página</span>
             </h2>
 
             {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card SEO */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+              <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
+                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
                   <span className="text-[#EB1614]">SEO</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -161,8 +161,8 @@ const SitesEstrategicos = () => {
               </div>
 
               {/* Card Posicionamento */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+              <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
+                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
                   Posicionamento <span className="text-[#EB1614]">claro</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -171,8 +171,8 @@ const SitesEstrategicos = () => {
               </div>
 
               {/* Card Copywriting */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+              <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
+                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
                   Copywriting <span className="text-[#EB1614]">orientado à conversão</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
