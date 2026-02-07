@@ -185,57 +185,78 @@ const SitesEstrategicos = () => {
 
         {/* Seção: A Sua Jornada Conosco */}
         <section className="py-20 px-6" style={{ backgroundColor: "#191518" }}>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             {/* Título */}
-            <h2 className="text-2xl md:text-4xl text-white text-center mb-16" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            <h2 className="text-2xl md:text-4xl text-white text-center mb-12" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               A Sua{" "}
               <span className="font-thin text-[#EB1614]">Jornada Conosco</span>
             </h2>
 
-            {/* Timeline */}
-            <div className="relative">
-              {/* Linha horizontal - Desktop */}
-              <div className="hidden md:block absolute top-1.5 left-0 right-0 h-0.5 bg-[#3366FF]" />
-              
-              {/* Linha vertical - Mobile */}
-              <div className="md:hidden absolute top-0 bottom-0 left-1.5 w-0.5 bg-[#3366FF]" />
+            {/* Cards das Etapas */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card Briefing */}
+              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
+                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
+                  1° Etapa
+                </span>
+                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Briefing
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Reunião inicial para entender seu negócio, objetivos e diferenciais competitivos.
+                </p>
+              </div>
 
-              {/* Etapas */}
-              <div className="flex flex-col md:flex-row md:justify-between gap-6 md:gap-0">
-                {/* Briefing */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3 relative">
-                  {/* Indicador "Você entra aqui" */}
-                  <div className="absolute -top-10 md:-top-12 left-0 md:left-1/2 md:-translate-x-1/2 flex items-center gap-1 text-white/70 text-xs">
-                    <span>Você entra aqui</span>
-                    <ArrowRight className="w-3 h-3 rotate-90 md:rotate-90" />
-                  </div>
-                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
-                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Briefing</span>
-                </div>
+              {/* Card Conteúdo */}
+              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
+                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
+                  2° Etapa
+                </span>
+                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Conteúdo
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Criação de textos persuasivos e estrutura de informações otimizada para conversão.
+                </p>
+              </div>
 
-                {/* Conteúdo */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
-                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Conteúdo</span>
-                </div>
+              {/* Card Protótipo */}
+              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
+                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
+                  3° Etapa
+                </span>
+                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Protótipo
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Wireframe da estrutura do site para validação antes do design final.
+                </p>
+              </div>
 
-                {/* Protótipo */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
-                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Protótipo</span>
-                </div>
+              {/* Card Design */}
+              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
+                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
+                  4° Etapa
+                </span>
+                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Design
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Criação visual completa com identidade única e elementos que transmitem autoridade.
+                </p>
+              </div>
 
-                {/* Design */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
-                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Design</span>
-                </div>
-
-                {/* Entrega */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
-                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Entrega</span>
-                </div>
+              {/* Card Entrega */}
+              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
+                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
+                  5° Etapa
+                </span>
+                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  Entrega
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Site publicado, otimizado e pronto para gerar resultados desde o primeiro dia.
+                </p>
               </div>
             </div>
           </div>
