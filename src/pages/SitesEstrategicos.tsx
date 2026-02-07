@@ -152,7 +152,7 @@ const SitesEstrategicos = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card SEO */}
               <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
-                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
+                <h3 className="text-lg text-gray-900 mb-2" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
                   <span className="text-[#EB1614]">SEO</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -162,7 +162,7 @@ const SitesEstrategicos = () => {
 
               {/* Card Posicionamento */}
               <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
-                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
+                <h3 className="text-lg text-gray-900 mb-2" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
                   Posicionamento <span className="text-[#EB1614]">claro</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -172,12 +172,75 @@ const SitesEstrategicos = () => {
 
               {/* Card Copywriting */}
               <div className="rounded-2xl border border-gray-300 p-6" style={{ backgroundColor: "#F5F4F3" }}>
-                <h3 className="font-subtitle text-lg font-thin text-gray-900 mb-2">
+                <h3 className="text-lg text-gray-900 mb-2" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
                   Copywriting <span className="text-[#EB1614]">orientado à conversão</span>
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Textos persuasivos com gatilhos mentais que guiam o visitante do interesse à ação de contato.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Seção: A Sua Jornada Conosco */}
+        <section className="py-20 px-6" style={{ backgroundColor: "#191518" }}>
+          <div className="max-w-5xl mx-auto">
+            {/* Título */}
+            <h2 className="font-subtitle text-2xl md:text-4xl text-white text-center mb-16">
+              <span className="font-thin">A Sua</span>{" "}
+              <span className="text-[#1800AD]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Jornada Conosco</span>
+            </h2>
+
+            {/* Timeline */}
+            <div className="relative">
+              {/* Linha horizontal - Desktop */}
+              <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-[#1800AD]" />
+              
+              {/* Linha vertical - Mobile */}
+              <div className="md:hidden absolute top-0 bottom-0 left-6 w-0.5 bg-[#1800AD]" />
+
+              {/* Etapas */}
+              <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0">
+                {/* Briefing */}
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
+                    <span className="text-white font-semibold text-sm">1</span>
+                  </div>
+                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Briefing</span>
+                </div>
+
+                {/* Conteúdo */}
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
+                    <span className="text-white font-semibold text-sm">2</span>
+                  </div>
+                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Conteúdo</span>
+                </div>
+
+                {/* Protótipo */}
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
+                    <span className="text-white font-semibold text-sm">3</span>
+                  </div>
+                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Protótipo</span>
+                </div>
+
+                {/* Design */}
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
+                    <span className="text-white font-semibold text-sm">4</span>
+                  </div>
+                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Design</span>
+                </div>
+
+                {/* Entrega */}
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
+                    <span className="text-white font-semibold text-sm">5</span>
+                  </div>
+                  <span className="text-white font-subtitle font-thin text-sm md:text-base">Entrega</span>
+                </div>
               </div>
             </div>
           </div>
