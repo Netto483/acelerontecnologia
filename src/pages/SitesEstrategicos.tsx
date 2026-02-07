@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
+import SitesStatsSection from "@/components/SitesStatsSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroBackground from "@/assets/sites-estrategicos-hero.png";
 
@@ -16,6 +17,13 @@ const SitesEstrategicos = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const problemItems = [
+    "Leads não convertem",
+    "O comercial perde tempo explicando o básico",
+    "Ciclo de vendas fica caro",
+    "A empresa não passa confiança",
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -73,30 +81,47 @@ const SitesEstrategicos = () => {
         </section>
 
         {/* Seção "Seu site não passa credibilidade" */}
-        <section className="h-[320px] px-6 flex items-center" style={{ backgroundColor: '#191518' }}>
+        <section className="min-h-[320px] py-12 md:py-0 md:h-[320px] px-6 flex items-center" style={{ backgroundColor: '#191518' }}>
           <div className="max-w-7xl mx-auto w-full">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
               {/* Título - Esquerda */}
               <div className="flex-1 text-left">
+                <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider mb-2 block">
+                  Falta de Estratégia
+                </span>
                 <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight">
-                  Seu site não passa credibilidade
+                  Seu site não passa{" "}
+                  <span className="text-[#EB1614] font-thin">credibilidade</span>
                 </h2>
               </div>
 
               {/* Linha Vertical Divisória */}
-              <div className="hidden md:block w-px h-32 bg-white/30" />
+              <div className="hidden md:block w-px h-48 bg-white/30 self-center" />
 
               {/* Texto - Direita */}
               <div className="flex-1 text-left">
-                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed">
+                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed mb-6">
                   Um site sem estratégia desperdiça tráfego, atrai leads que não convertem e gera contatos totalmente desqualificados. Pior: ele não transmite confiança nem credibilidade.
                   <br /><br />
                   O resultado é um ciclo de vendas mais longo, mais caro e um time comercial sobrecarregado, perdendo tempo explicando o básico para quem ainda não está pronto para comprar. Enquanto isso, oportunidades reais escorrem para o concorrente.
                 </p>
+
+                {/* Lista de problemas */}
+                <ul className="space-y-2">
+                  {problemItems.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2 text-white/80 text-sm">
+                      <X className="w-4 h-4 text-[#EB1614] flex-shrink-0" />
+                      <span className="font-subtitle font-thin">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Stats Bar Section */}
+        <SitesStatsSection />
 
         {/* Content Section */}
         <div className="py-20 px-6">
