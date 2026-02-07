@@ -187,58 +187,53 @@ const SitesEstrategicos = () => {
         <section className="py-20 px-6" style={{ backgroundColor: "#191518" }}>
           <div className="max-w-5xl mx-auto">
             {/* Título */}
-            <h2 className="font-subtitle text-2xl md:text-4xl text-white text-center mb-16">
-              <span className="font-thin">A Sua</span>{" "}
-              <span className="text-[#1800AD]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Jornada Conosco</span>
+            <h2 className="text-2xl md:text-4xl text-white text-center mb-16" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              A Sua{" "}
+              <span className="font-thin text-[#EB1614]">Jornada Conosco</span>
             </h2>
 
             {/* Timeline */}
             <div className="relative">
               {/* Linha horizontal - Desktop */}
-              <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-[#1800AD]" />
+              <div className="hidden md:block absolute top-1.5 left-0 right-0 h-0.5 bg-[#3366FF]" />
               
               {/* Linha vertical - Mobile */}
-              <div className="md:hidden absolute top-0 bottom-0 left-6 w-0.5 bg-[#1800AD]" />
+              <div className="md:hidden absolute top-0 bottom-0 left-1.5 w-0.5 bg-[#3366FF]" />
 
               {/* Etapas */}
-              <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-0">
+              <div className="flex flex-col md:flex-row md:justify-between gap-6 md:gap-0">
                 {/* Briefing */}
-                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
-                    <span className="text-white font-semibold text-sm">1</span>
+                <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3 relative">
+                  {/* Indicador "Você entra aqui" */}
+                  <div className="absolute -top-10 md:-top-12 left-0 md:left-1/2 md:-translate-x-1/2 flex items-center gap-1 text-white/70 text-xs">
+                    <span>Você entra aqui</span>
+                    <ArrowRight className="w-3 h-3 rotate-90 md:rotate-90" />
                   </div>
+                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
                   <span className="text-white font-subtitle font-thin text-sm md:text-base">Briefing</span>
                 </div>
 
                 {/* Conteúdo */}
                 <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
-                    <span className="text-white font-semibold text-sm">2</span>
-                  </div>
+                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
                   <span className="text-white font-subtitle font-thin text-sm md:text-base">Conteúdo</span>
                 </div>
 
                 {/* Protótipo */}
                 <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
-                    <span className="text-white font-semibold text-sm">3</span>
-                  </div>
+                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
                   <span className="text-white font-subtitle font-thin text-sm md:text-base">Protótipo</span>
                 </div>
 
                 {/* Design */}
                 <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
-                    <span className="text-white font-semibold text-sm">4</span>
-                  </div>
+                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
                   <span className="text-white font-subtitle font-thin text-sm md:text-base">Design</span>
                 </div>
 
                 {/* Entrega */}
                 <div className="flex md:flex-col items-center md:items-center gap-4 md:gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1800AD] flex items-center justify-center z-10 flex-shrink-0">
-                    <span className="text-white font-semibold text-sm">5</span>
-                  </div>
+                  <div className="w-3 h-3 rounded-full bg-[#3366FF] z-10 flex-shrink-0" />
                   <span className="text-white font-subtitle font-thin text-sm md:text-base">Entrega</span>
                 </div>
               </div>
