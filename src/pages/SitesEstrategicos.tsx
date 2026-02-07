@@ -11,6 +11,10 @@ const SitesEstrategicos = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    // Garante que a página sempre abra no topo ao navegar para esta rota
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    setScrollY(0);
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -81,7 +85,10 @@ const SitesEstrategicos = () => {
         </section>
 
         {/* Seção "Seu site não passa credibilidade" */}
-        <section className="min-h-[320px] py-12 md:py-0 md:h-[320px] px-6 flex items-center" style={{ backgroundColor: '#191518' }}>
+        <section
+          className="min-h-[320px] py-16 md:py-12 px-6 flex items-center"
+          style={{ backgroundColor: "#191518" }}
+        >
           <div className="max-w-7xl mx-auto w-full">
             <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
               {/* Título - Esquerda */}
@@ -93,21 +100,9 @@ const SitesEstrategicos = () => {
                   Seu site não passa{" "}
                   <span className="text-[#EB1614] font-thin">credibilidade</span>
                 </h2>
-              </div>
 
-              {/* Linha Vertical Divisória */}
-              <div className="hidden md:block w-px h-48 bg-white/30 self-center" />
-
-              {/* Texto - Direita */}
-              <div className="flex-1 text-left">
-                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed mb-6">
-                  Um site sem estratégia desperdiça tráfego, atrai leads que não convertem e gera contatos totalmente desqualificados. Pior: ele não transmite confiança nem credibilidade.
-                  <br /><br />
-                  O resultado é um ciclo de vendas mais longo, mais caro e um time comercial sobrecarregado, perdendo tempo explicando o básico para quem ainda não está pronto para comprar. Enquanto isso, oportunidades reais escorrem para o concorrente.
-                </p>
-
-                {/* Lista de problemas */}
-                <ul className="space-y-2">
+                {/* Lista de problemas (abaixo do título) */}
+                <ul className="mt-6 space-y-2">
                   {problemItems.map((item, index) => (
                     <li key={index} className="flex items-center gap-2 text-white/80 text-sm">
                       <X className="w-4 h-4 text-[#EB1614] flex-shrink-0" />
@@ -115,6 +110,21 @@ const SitesEstrategicos = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Linha Vertical Divisória */}
+              <div className="hidden md:block w-px h-48 bg-white/30 self-center" />
+
+              {/* Texto - Direita */}
+              <div className="flex-1 text-left">
+                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed">
+                  Um site sem estratégia desperdiça tráfego, atrai leads que não convertem e gera contatos totalmente
+                  desqualificados. Pior: ele não transmite confiança nem credibilidade.
+                  <br />
+                  <br />O resultado é um ciclo de vendas mais longo, mais caro e um time comercial sobrecarregado,
+                  perdendo tempo explicando o básico para quem ainda não está pronto para comprar. Enquanto isso,
+                  oportunidades reais escorrem para o concorrente.
+                </p>
               </div>
             </div>
           </div>
@@ -132,17 +142,30 @@ const SitesEstrategicos = () => {
                 Sites Estratégicos com o objetivo de potencializar a conversão
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Cada elemento do seu site é pensado estrategicamente para guiar o visitante até a conversão. 
-                Utilizamos <strong className="text-foreground">técnicas avançadas de UX/UI</strong>, copywriting persuasivo e 
-                gatilhos mentais que transformam curiosos em leads qualificados e leads em clientes. 
-                Nossos sites são otimizados para SEO, garantindo que sua empresa seja encontrada no Google, 
-                e possuem <strong className="text-foreground">velocidade de carregamento superior</strong> para não perder nenhuma oportunidade. 
-                Com design responsivo e testes A/B contínuos, maximizamos suas taxas de conversão e 
+                Cada elemento do seu site é pensado estrategicamente para guiar o visitante até a conversão.
+                Utilizamos <strong className="text-foreground">técnicas avançadas de UX/UI</strong>, copywriting persuasivo
+                e gatilhos mentais que transformam curiosos em leads qualificados e leads em clientes. Nossos sites são
+                otimizados para SEO, garantindo que sua empresa seja encontrada no Google, e possuem{" "}
+                <strong className="text-foreground">velocidade de carregamento superior</strong> para não perder nenhuma
+                oportunidade. Com design responsivo e testes A/B contínuos, maximizamos suas taxas de conversão e
                 <strong className="text-foreground"> multiplicamos seu retorno sobre investimento</strong>.
               </p>
             </div>
           </div>
         </div>
+
+        {/* Seção: Converta Leads em Clientes */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              Converta Leads em Clientes com a sua página
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Estruturamos a sua página para prender atenção nos primeiros segundos e conduzir o visitante até o
+              contato — com copy, UX e hierarquia visual pensadas para conversão.
+            </p>
+          </div>
+        </section>
         
         {/* Formulário de Contato */}
         <ContactFormSection />
