@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroBackground from "@/assets/sites-estrategicos-hero.png";
+import aoIcon from "@/assets/ao-icon.png";
 
 const SitesEstrategicos = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -133,37 +134,52 @@ const SitesEstrategicos = () => {
         {/* Stats Bar Section */}
         <SitesStatsSection />
 
-        {/* Content Section */}
-        <div className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Seção Sites Estratégicos para Conversão */}
-            <div className="mb-16">
-              <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-                Sites Estratégicos com o objetivo de potencializar a conversão
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Cada elemento do seu site é pensado estrategicamente para guiar o visitante até a conversão.
-                Utilizamos <strong className="text-foreground">técnicas avançadas de UX/UI</strong>, copywriting persuasivo
-                e gatilhos mentais que transformam curiosos em leads qualificados e leads em clientes. Nossos sites são
-                otimizados para SEO, garantindo que sua empresa seja encontrada no Google, e possuem{" "}
-                <strong className="text-foreground">velocidade de carregamento superior</strong> para não perder nenhuma
-                oportunidade. Com design responsivo e testes A/B contínuos, maximizamos suas taxas de conversão e
-                <strong className="text-foreground"> multiplicamos seu retorno sobre investimento</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Seção: Converta Leads em Clientes */}
-        <section className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Converta Leads em Clientes com a sua página
+        <section className="py-20 px-6" style={{ backgroundColor: "#F5F4F3" }}>
+          <div className="max-w-5xl mx-auto">
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <img src={aoIcon} alt="Aceleron Logo" className="h-16 w-auto" />
+            </div>
+
+            {/* Título */}
+            <h2 className="font-subtitle text-2xl md:text-4xl font-semibold text-gray-900 text-center mb-12">
+              Converta Leads em Clientes{" "}
+              <span className="text-[#EB1614] font-thin italic">com a sua página</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Estruturamos a sua página para prender atenção nos primeiros segundos e conduzir o visitante até o
-              contato — com copy, UX e hierarquia visual pensadas para conversão.
-            </p>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Card SEO */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+                  <span className="text-[#EB1614]">SEO</span>
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Otimização para mecanismos de busca que coloca sua empresa nas primeiras posições do Google e atrai tráfego qualificado.
+                </p>
+              </div>
+
+              {/* Card Posicionamento */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+                  Posicionamento <span className="text-[#EB1614]">claro</span>
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Comunicação objetiva que transmite credibilidade e diferencia sua empresa da concorrência em segundos.
+                </p>
+              </div>
+
+              {/* Card Copywriting */}
+              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <h3 className="font-subtitle text-lg font-semibold text-gray-900 mb-2">
+                  Copywriting <span className="text-[#EB1614]">orientado à conversão</span>
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Textos persuasivos com gatilhos mentais que guiam o visitante do interesse à ação de contato.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
         
