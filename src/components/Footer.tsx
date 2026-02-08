@@ -18,8 +18,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-black max-w-md leading-relaxed text-sm md:text-base">
-              Criamos soluções de hardware e software que transformam empresas. 
-              Sites, sistemas internos e automação com I.A. para acelerar seu negócio.
+              Criamos soluções de hardware e software para empresas que querem operar melhor, vender mais e crescer com tecnologia.
             </p>
           </div>
 
@@ -28,22 +27,22 @@ const Footer = () => {
             <h4 className="font-display font-semibold mb-4 text-black">Serviços</h4>
             <ul className="space-y-2 md:space-y-3">
               <li>
-                <Link to="/sites-estrategicos" className="text-black hover:text-black/70 transition-colors text-sm md:text-base">
+                <Link to="/sites-estrategicos" className="text-black hover:text-[#EB1614] transition-colors text-sm md:text-base">
                   Sites Estratégicos
                 </Link>
               </li>
               <li>
-                <Link to="/sistemas-personalizados" className="text-black hover:text-black/70 transition-colors text-sm md:text-base">
+                <Link to="/sistemas-personalizados" className="text-black hover:text-[#EB1614] transition-colors text-sm md:text-base">
                   Sistemas Personalizados
                 </Link>
               </li>
               <li>
-                <Link to="/automacoes-ia" className="text-black hover:text-black/70 transition-colors text-sm md:text-base">
+                <Link to="/automacoes-ia" className="text-black hover:text-[#EB1614] transition-colors text-sm md:text-base">
                   Automações com I.A.
                 </Link>
               </li>
               <li>
-                <Link to="/dispositivos-personalizados" className="text-black hover:text-black/70 transition-colors text-sm md:text-base">
+                <Link to="/dispositivos-personalizados" className="text-black hover:text-[#EB1614] transition-colors text-sm md:text-base">
                   Dispositivos Personalizados
                 </Link>
               </li>
@@ -67,10 +66,10 @@ const Footer = () => {
             © {currentYear} Aceleron. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4 md:gap-6">
-            <Link to="/politica-de-privacidade" className="text-xs md:text-sm text-black hover:text-black/70 transition-colors">
+            <Link to="/politica-de-privacidade" className="text-xs md:text-sm text-black hover:text-[#EB1614] transition-colors">
               Política de Privacidade
             </Link>
-            <Link to="/termos-de-uso" className="text-xs md:text-sm text-black hover:text-black/70 transition-colors">
+            <Link to="/termos-de-uso" className="text-xs md:text-sm text-black hover:text-[#EB1614] transition-colors">
               Termos de Uso
             </Link>
           </div>
