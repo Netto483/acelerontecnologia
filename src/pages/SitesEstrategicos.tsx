@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
 import SitesStatsSection from "@/components/SitesStatsSection";
+import JourneySectionWithReveal from "@/components/JourneySectionWithReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -184,83 +185,7 @@ const SitesEstrategicos = () => {
         </section>
 
         {/* Seção: A Sua Jornada Conosco */}
-        <section className="py-20 px-6" style={{ backgroundColor: "#191518" }}>
-          <div className="max-w-6xl mx-auto">
-            {/* Título */}
-            <h2 className="text-2xl md:text-4xl text-white text-center mb-12" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-              A Sua{" "}
-              <span className="font-thin text-[#EB1614]">Jornada Conosco</span>
-            </h2>
-
-            {/* Cards das Etapas */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card Briefing */}
-              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
-                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
-                  1° Etapa
-                </span>
-                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Briefing
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Reunião inicial para entender seu negócio, objetivos e diferenciais competitivos.
-                </p>
-              </div>
-
-              {/* Card Conteúdo */}
-              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
-                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
-                  2° Etapa
-                </span>
-                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Conteúdo
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Criação de textos persuasivos e estrutura de informações otimizada para conversão.
-                </p>
-              </div>
-
-              {/* Card Protótipo */}
-              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
-                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
-                  3° Etapa
-                </span>
-                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Protótipo
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Wireframe da estrutura do site para validação antes do design final.
-                </p>
-              </div>
-
-              {/* Card Design */}
-              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
-                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
-                  4° Etapa
-                </span>
-                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Design
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Criação visual completa com identidade única e elementos que transmitem autoridade.
-                </p>
-              </div>
-
-              {/* Card Entrega */}
-              <div className="rounded-2xl border border-white/20 p-6" style={{ backgroundColor: "#191518" }}>
-                <span className="text-[#EB1614] text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>
-                  5° Etapa
-                </span>
-                <h3 className="text-lg text-white font-thin mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Entrega
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Site publicado, otimizado e pronto para gerar resultados desde o primeiro dia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <JourneySectionWithReveal />
         
         {/* Formulário de Contato */}
         <ContactFormSection />
