@@ -1,77 +1,82 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import automacoesCard from "@/assets/automacoes-ia-card.png";
 
 const AutomacoesIA = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    // Garante que a página sempre abra no topo ao navegar para esta rota
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    setScrollY(0);
+
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Automações com Inteligência Artificial
-          </h1>
-          <p className="text-xl text-muted-foreground mb-16">
-            Inteligência artificial aplicada para automatizar tarefas repetitivas, economizar e multiplicar resultados.
-          </p>
-          
-          {/* Seção Atendimento e Suporte */}
-          <div className="mb-16">
-            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Automações para Atendimento e Suporte
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Imagine ter um atendente que trabalha <strong className="text-foreground">24 horas por dia, 7 dias por semana</strong>, sem pausas, férias ou folgas. 
-              Nossas automações com inteligência artificial custam até <strong className="text-foreground">10 vezes menos que um funcionário ao ano</strong>, 
-              respondendo instantaneamente a centenas de clientes simultaneamente. Enquanto um colaborador humano atende um cliente por vez, 
-              nossa I.A. qualifica leads, agenda reuniões, responde dúvidas frequentes e escala apenas os casos complexos para sua equipe. 
-              O resultado? Redução drástica de custos operacionais, aumento na satisfação do cliente e sua equipe focada no que realmente importa: 
-              fechar negócios e criar relacionamentos.
-            </p>
-          </div>
+      <main>
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
+          {/* Parallax Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: `url(${automacoesCard})`,
+              backgroundPosition: 'center',
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+          />
 
-          {/* Seção Recursos Humanos e Recrutamento */}
-          <div className="mb-16">
-            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Recursos Humanos e Recrutamento
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Transforme seu departamento de RH com automações que <strong className="text-foreground">analisam milhares de currículos em minutos</strong>, 
-              identificando os candidatos mais qualificados com base em critérios personalizados. Nossa I.A. realiza triagem automática, 
-              agenda entrevistas, envia feedbacks personalizados e mantém candidatos engajados durante todo o processo seletivo. 
-              Além disso, automatize processos de onboarding, gestão de documentos trabalhistas e avaliações de desempenho, 
-              liberando seu time de RH para focar no que realmente importa: <strong className="text-foreground">desenvolver pessoas e cultura organizacional</strong>.
-            </p>
-          </div>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
 
-          {/* Seção Processamento Inteligente de Documentos */}
-          <div className="mb-16">
-            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Processamento Inteligente de Documentos
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Elimine horas de trabalho manual com nossa I.A. que <strong className="text-foreground">extrai, classifica e organiza informações automaticamente</strong> 
-              de contratos, notas fiscais, relatórios e qualquer tipo de documento. Nossa tecnologia de OCR avançado e processamento de linguagem natural 
-              entende o contexto dos seus documentos, preenche formulários automaticamente, detecta inconsistências e alimenta seus sistemas internos 
-              sem intervenção humana. <strong className="text-foreground">Reduza erros em até 95%</strong> e processe em segundos o que antes levava horas.
-            </p>
-          </div>
+          <div className="relative max-w-7xl mx-auto w-full">
+            <div className="max-w-3xl text-left">
+              {/* Main Headline */}
+              <h1 
+                className="font-subtitle text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 animate-fade-in text-white"
+                style={{ animationDelay: '0.1s' }}
+              >
+                Automações com I.A.
+              </h1>
 
-          {/* Seção Automação de E-mails */}
-          <div className="mb-16">
-            <h2 className="font-subtitle text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Automação de E-mails
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Nunca mais perca uma oportunidade por falta de follow-up. Nossa I.A. <strong className="text-foreground">lê, interpreta e responde e-mails automaticamente</strong>, 
-              classificando mensagens por prioridade, encaminhando para os departamentos corretos e respondendo perguntas frequentes instantaneamente. 
-              Crie sequências de nurturing personalizadas que se adaptam ao comportamento de cada lead, envie propostas no momento certo e 
-              mantenha seus clientes informados sem esforço manual. <strong className="text-foreground">Aumente suas taxas de resposta em até 300%</strong> 
-              enquanto sua equipe foca em conversas que realmente precisam do toque humano.
-            </p>
+              {/* Subtitle */}
+              <p 
+                className="text-base md:text-xl text-white/80 max-w-2xl mb-8 md:mb-10 animate-fade-in"
+                style={{ animationDelay: '0.2s' }}
+              >
+                Inteligência artificial aplicada para automatizar tarefas repetitivas, 
+                economizar recursos e multiplicar os resultados da sua empresa.
+              </p>
+
+              {/* CTA Button */}
+              <div 
+                className="animate-fade-in"
+                style={{ animationDelay: '0.3s' }}
+              >
+                <Button 
+                  variant="hero" 
+                  className="group font-thin text-sm md:text-base"
+                  onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Quero automatizar minha empresa
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-        
+        </section>
+
         {/* Formulário de Contato */}
         <ContactFormSection />
       </main>
