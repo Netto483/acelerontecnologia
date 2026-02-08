@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import logoAceleron from "@/assets/logo-aceleron.png";
+import aoIcon from "@/assets/ao-icon.png";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const NoSystemSection = () => {
@@ -19,9 +19,9 @@ const NoSystemSection = () => {
           <div className="flex-1">
             {/* Logo */}
             <img 
-              src={logoAceleron} 
+              src={aoIcon} 
               alt="Aceleron Tecnologias" 
-              className="h-8 md:h-10 w-auto mb-6"
+              className="h-12 md:h-16 w-auto mb-6"
             />
             
             {/* Title */}
