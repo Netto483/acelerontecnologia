@@ -88,8 +88,7 @@ const SitesEstrategicos = () => {
 
         {/* Seção "Seu site não passa credibilidade" */}
         <section
-          className="min-h-[320px] py-16 md:py-12 px-6 flex items-center"
-          style={{ backgroundColor: "#191518" }}
+          className="min-h-[320px] py-16 md:py-12 px-6 flex items-center bg-[#F5F4F3] md:bg-[#191518]"
         >
           <div className="max-w-7xl mx-auto w-full">
             <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
@@ -98,7 +97,7 @@ const SitesEstrategicos = () => {
                 <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider mb-2 block">
                   Falta de Estratégia
                 </span>
-                <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight">
+                <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 md:text-white leading-tight">
                   Seu site não passa{" "}
                   <span className="text-[#EB1614] font-thin">credibilidade</span>
                 </h2>
@@ -106,7 +105,7 @@ const SitesEstrategicos = () => {
                 {/* Lista de problemas (abaixo do título) */}
                 <ul className="mt-6 space-y-2">
                   {problemItems.map((item, index) => (
-                    <li key={index} className="flex items-center gap-2 text-white/80 text-sm">
+                    <li key={index} className="flex items-center gap-2 text-gray-600 md:text-white/80 text-sm">
                       <X className="w-4 h-4 text-[#EB1614] flex-shrink-0" />
                       <span className="font-subtitle font-thin">{item}</span>
                     </li>
@@ -119,7 +118,7 @@ const SitesEstrategicos = () => {
 
               {/* Texto - Direita */}
               <div className="flex-1 text-left">
-                <p className="font-subtitle font-thin text-white/80 text-sm md:text-base leading-relaxed">
+                <p className="font-subtitle font-thin text-gray-600 md:text-white/80 text-sm md:text-base leading-relaxed">
                   Um site sem estratégia desperdiça tráfego, atrai leads que não convertem e gera contatos totalmente
                   desqualificados. Pior: ele não transmite confiança nem credibilidade.
                   <br />
