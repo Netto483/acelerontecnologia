@@ -55,7 +55,7 @@ const StrategicSitesSection = () => {
             <img 
               src={strategicSiteExample} 
               alt="Site estratégico com dashboard de conversão" 
-              className="w-auto max-w-full max-h-[500px] object-contain rounded-2xl shadow-2xl"
+              className="w-auto max-w-full max-h-[600px] object-contain"
             />
           </div>
         </div>
