@@ -1,5 +1,5 @@
 import { ArrowRight, Database, Settings, BarChart3 } from "lucide-react";
-import crmDashboard from "@/assets/crm-dashboard.png";
+import sistemaPrincipal from "@/assets/sistema-principal.png";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const InternalSystemsSection = () => {
@@ -8,16 +8,12 @@ const InternalSystemsSection = () => {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`relative min-h-[600px] md:min-h-0 md:py-20 px-6 transition-all duration-700 ${
+      className={`relative min-h-[500px] md:min-h-0 md:py-20 px-6 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center md:hidden"
-        style={{ backgroundImage: `url(${crmDashboard})` }}
-      />
-      <div className="absolute inset-0 bg-black/70 md:hidden" />
+      {/* Mobile: Dark background */}
+      <div className="absolute inset-0 bg-[#171417] md:hidden" />
       
       {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
@@ -26,13 +22,11 @@ const InternalSystemsSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-12 md:py-0">
           {/* Image - Left side (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-start order-2 lg:order-1">
-            <div className="rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)]">
-              <img 
-                src={crmDashboard} 
-                alt="Dashboard CRM personalizado" 
-                className="w-full max-w-lg h-auto object-cover"
-              />
-            </div>
+            <img 
+              src={sistemaPrincipal} 
+              alt="Dashboard CRM personalizado" 
+              className="w-auto max-w-full max-h-[600px] object-contain"
+            />
           </div>
 
           {/* Content - Right side */}
@@ -65,6 +59,15 @@ const InternalSystemsSection = () => {
                 <span>Dashboards completos em tempo real</span>
               </li>
             </ul>
+
+            {/* Mobile image - above button */}
+            <div className="md:hidden mb-6">
+              <img 
+                src={sistemaPrincipal} 
+                alt="Dashboard CRM personalizado" 
+                className="w-full max-w-md mx-auto object-contain"
+              />
+            </div>
 
             {/* Link style button */}
             <a
