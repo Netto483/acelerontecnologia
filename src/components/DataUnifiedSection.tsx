@@ -1,14 +1,17 @@
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { LayoutDashboard, RefreshCw, Network, CheckCircle, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const DataUnifiedSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const benefits = [
-    "Um único painel com todas as informações da empresa",
-    "Dados atualizados em tempo real, sem versões diferentes",
-    "Processos integrados entre setores",
-    "Menos tarefas manuais e menos erros operacionais",
-    "Decisões mais rápidas com dados confiáveis",
+    { icon: LayoutDashboard, text: "Um único painel com todas as informações da empresa" },
+    { icon: RefreshCw, text: "Dados atualizados em tempo real, sem versões diferentes" },
+    { icon: Network, text: "Processos integrados entre setores" },
+    { icon: CheckCircle, text: "Menos tarefas manuais e menos erros operacionais" },
+    { icon: Zap, text: "Decisões mais rápidas com dados confiáveis" },
   ];
 
   return (
@@ -29,9 +32,19 @@ const DataUnifiedSection = () => {
             </span>
             
             {/* Main Title */}
-            <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight">
+            <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight mb-6">
               Tudo em um só lugar
             </h2>
+
+            {/* CTA Button */}
+            <Button 
+              variant="default"
+              className="bg-[#EB1614] hover:bg-[#EB1614]/90 text-white font-thin text-sm md:text-base group"
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Descrever minha necessidade
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
 
           {/* Right side - Text + List */}
@@ -41,14 +54,14 @@ const DataUnifiedSection = () => {
             </p>
 
             {/* Benefits list */}
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li 
                   key={index} 
                   className="flex items-start gap-3 text-white/80 text-sm md:text-base"
                 >
-                  <span className="text-[#EB1614] mt-1">•</span>
-                  <span>{benefit}</span>
+                  <benefit.icon className="w-5 h-5 text-[#EB1614] mt-0.5 flex-shrink-0" />
+                  <span>{benefit.text}</span>
                 </li>
               ))}
             </ul>
