@@ -27,9 +27,9 @@ const NoSystemSection = () => {
             {/* Title */}
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight">
               Sem{" "}
-              <span className="text-[#EB1614] font-thin">Sistema</span>, Sem{" "}
-              <span className="text-[#EB1614] font-thin">Controle</span>, Sem{" "}
-              <span className="text-[#EB1614] font-thin">Crescimento</span>
+              <span className="text-[#EB1614]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Sistema</span>, Sem{" "}
+              <span className="text-[#EB1614]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Controle</span>, Sem{" "}
+              <span className="text-[#EB1614]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Crescimento</span>
             </h2>
           </div>
 
@@ -46,11 +46,11 @@ const NoSystemSection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-gray-900 font-thin text-base md:text-lg group hover:text-[#EB1614] transition-colors relative cursor-pointer w-fit"
+              className="inline-flex items-center gap-2 text-[#EB1614] font-thin text-base md:text-lg group hover:text-[#EB1614]/80 transition-colors relative cursor-pointer w-fit"
             >
               Falar com um especialista
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-[#EB1614] transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#EB1614] group-hover:bg-[#EB1614]/80 transition-colors" />
             </a>
           </div>
         </div>
