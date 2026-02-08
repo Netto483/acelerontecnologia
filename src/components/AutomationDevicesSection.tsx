@@ -12,12 +12,8 @@ const AutomationDevicesSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Background with device image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center md:hidden"
-        style={{ backgroundImage: `url(${iotDevice})` }}
-      />
-      <div className="absolute inset-0 bg-black/80 md:hidden" />
+      {/* Mobile: Same dark background as desktop */}
+      <div className="absolute inset-0 bg-[#191518] md:hidden" />
       
       {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#191518] hidden md:block" />
@@ -42,6 +38,15 @@ const AutomationDevicesSection = () => {
             <p className="text-gray-400 text-sm md:text-base mb-6">
               Evite perdas de produtos com o monitoramento contínuo de temperatura.
             </p>
+
+            {/* Mobile image - above button */}
+            <div className="md:hidden mb-6">
+              <img 
+                src={iotDevice} 
+                alt="Dispositivo IoT personalizado" 
+                className="w-48 h-auto mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              />
+            </div>
 
             {/* Link style button */}
             <a 
