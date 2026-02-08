@@ -1,5 +1,6 @@
 import { ArrowRight, Bot, MessageSquare, Zap } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import automacoesCard from "@/assets/automacoes-ia-card.png";
 
 const AILeadsSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -42,6 +43,15 @@ const AILeadsSection = () => {
                 <span>Integração com WhatsApp e outras plataformas</span>
               </li>
             </ul>
+
+            {/* Mobile image - above button */}
+            <div className="md:hidden mb-6">
+              <img 
+                src={automacoesCard} 
+                alt="Automações com Inteligência Artificial" 
+                className="w-full max-w-md mx-auto object-contain rounded-lg"
+              />
+            </div>
 
             {/* Link style button */}
             <a
