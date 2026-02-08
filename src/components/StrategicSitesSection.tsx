@@ -12,12 +12,8 @@ const StrategicSitesSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center md:hidden"
-        style={{ backgroundImage: `url(${strategicSiteExample})` }}
-      />
-      <div className="absolute inset-0 bg-black/70 md:hidden" />
+      {/* Mobile: Dark background */}
+      <div className="absolute inset-0 bg-[#171417] md:hidden" />
       
       {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
@@ -38,6 +34,15 @@ const StrategicSitesSection = () => {
               para guiar o visitante até a conversão, utilizando técnicas avançadas de UX/UI, 
               copywriting persuasivo e otimização para SEO.
             </p>
+
+            {/* Mobile image - above button */}
+            <div className="md:hidden mb-6">
+              <img 
+                src={strategicSiteExample} 
+                alt="Site estratégico com dashboard de conversão" 
+                className="w-full max-w-md mx-auto object-contain"
+              />
+            </div>
 
             {/* Link style button */}
             <a 
