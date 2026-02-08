@@ -124,7 +124,7 @@ const JourneySectionWithReveal = () => {
             transitionDelay: '100ms'
           }}
         >
-          Essas serão as etapas que você irá seguir assim que começarmos a trabalhar no seu projeto
+          Essas são as etapas que seguiremos assim que iniciarmos o seu projeto.
         </p>
 
         {/* Cards das Etapas - Layout de Funil */}
