@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
 import NoSystemSection from "@/components/NoSystemSection";
+import SystemsStatsSection from "@/components/SystemsStatsSection";
+import DataUnifiedSection from "@/components/DataUnifiedSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -80,6 +82,12 @@ const SistemasPersonalizados = () => {
 
         {/* Seção Sem Sistema */}
         <NoSystemSection />
+
+        {/* Barra de Estatísticas */}
+        <SystemsStatsSection />
+
+        {/* Seção Tudo em um só lugar */}
+        <DataUnifiedSection />
 
         {/* Formulário de Contato */}
         <ContactFormSection />
