@@ -68,8 +68,8 @@ const AILeadsSection = () => {
             </a>
           </div>
 
-          {/* Visual - Right side: WhatsApp-style chat */}
-          <div className="flex-1 flex justify-center lg:justify-end w-full">
+          {/* Visual - Right side: WhatsApp-style chat (desktop only) */}
+          <div className="hidden md:flex flex-1 justify-center lg:justify-end w-full">
             <div className="flex flex-col gap-4 md:gap-5 w-full max-w-md">
               {/* User message - right aligned */}
               <div className="flex justify-end">

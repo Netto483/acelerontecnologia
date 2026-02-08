@@ -12,8 +12,8 @@ const InternalSystemsSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Dark background */}
-      <div className="absolute inset-0 bg-[#171417] md:hidden" />
+      {/* Mobile: Light background */}
+      <div className="absolute inset-0 bg-[#F5F4F3] md:hidden" />
       
       {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
@@ -34,27 +34,27 @@ const InternalSystemsSection = () => {
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sistemas Personalizados
             </span>
-            <h2 className="font-subtitle text-2xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-white md:text-gray-900">
+            <h2 className="font-subtitle text-2xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4 text-gray-900">
               Criamos o seu sistema interno{" "}
               <span className="text-[#EB1614] font-thin">100% personalizado</span>{" "}
               as suas necessidades.
             </h2>
-            <p className="text-white/80 md:text-gray-600 text-base md:text-lg mb-6 md:mb-8">
+            <p className="text-gray-600 text-base md:text-lg mb-6 md:mb-8">
               Desenvolvemos o sistema interno da sua empresa sob medida. Adaptado perfeitamente 
               aos processos dela, aumentando a eficiência e reduzindo dados dispersos.
             </p>
 
             {/* Features list */}
             <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-              <li className="flex items-center gap-3 text-white/80 md:text-gray-600">
+              <li className="flex items-center gap-3 text-gray-600">
                 <Database className="w-5 h-5 text-[#EB1614]" />
                 <span>Todos os dados em um só lugar</span>
               </li>
-              <li className="flex items-center gap-3 text-white/80 md:text-gray-600">
+              <li className="flex items-center gap-3 text-gray-600">
                 <Settings className="w-5 h-5 text-[#EB1614]" />
                 <span>Processos automatizados e otimizados</span>
               </li>
-              <li className="flex items-center gap-3 text-white/80 md:text-gray-600">
+              <li className="flex items-center gap-3 text-gray-600">
                 <BarChart3 className="w-5 h-5 text-[#EB1614]" />
                 <span>Dashboards completos em tempo real</span>
               </li>
@@ -65,7 +65,7 @@ const InternalSystemsSection = () => {
               <img 
                 src={sistemaPrincipal} 
                 alt="Dashboard CRM personalizado" 
-                className="w-full max-w-md mx-auto object-contain"
+                className="w-full max-w-lg mx-auto object-contain"
               />
             </div>
 
@@ -76,11 +76,11 @@ const InternalSystemsSection = () => {
                 e.preventDefault();
                 document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-white md:text-gray-900 font-thin text-base md:text-lg group hover:text-primary transition-colors relative cursor-pointer"
+              className="inline-flex items-center gap-2 text-gray-900 font-thin text-base md:text-lg group hover:text-primary transition-colors relative cursor-pointer"
             >
               Saber Mais
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white md:bg-gray-900 group-hover:bg-primary transition-colors" />
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 group-hover:bg-primary transition-colors" />
             </a>
           </div>
         </div>
