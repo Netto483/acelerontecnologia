@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
+import AICustomerServiceSection from "@/components/AICustomerServiceSection";
+import AIStatsSection from "@/components/AIStatsSection";
+import AIVsHumanSection from "@/components/AIVsHumanSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -47,7 +50,7 @@ const AutomacoesIA = () => {
                 className="font-subtitle text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 animate-fade-in text-white"
                 style={{ animationDelay: '0.1s' }}
               >
-                Automações com I.A.
+                Automações com IA.
               </h1>
 
               {/* Subtitle */}
@@ -76,6 +79,15 @@ const AutomacoesIA = () => {
             </div>
           </div>
         </section>
+
+        {/* Atenda seus clientes usando IA */}
+        <AICustomerServiceSection />
+
+        {/* Stats Section */}
+        <AIStatsSection />
+
+        {/* IA vs Humano */}
+        <AIVsHumanSection />
 
         {/* Formulário de Contato */}
         <ContactFormSection />
