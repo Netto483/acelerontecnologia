@@ -94,7 +94,7 @@ const JourneySectionWithReveal = ({ steps: customSteps, variant = "dark" }: Jour
   ];
 
   const steps = customSteps || defaultSteps;
-  const firstRowCount = steps.length <= 5 ? 3 : Math.ceil(steps.length / 2);
+  const firstRowCount = steps.length <= 4 ? steps.length : 3;
   const secondRowSteps = steps.slice(firstRowCount);
 
   return (
@@ -139,7 +139,9 @@ const JourneySectionWithReveal = ({ steps: customSteps, variant = "dark" }: Jour
 
           {secondRowSteps.length > 0 && (
             <div className={`grid grid-cols-1 gap-6 mx-auto w-full ${
-              secondRowSteps.length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-6xl'
+              secondRowSteps.length === 1 ? 'md:grid-cols-1 max-w-sm' :
+              secondRowSteps.length === 2 ? 'md:grid-cols-2 max-w-[calc(66.666%+0.75rem)]' :
+              'md:grid-cols-3 max-w-6xl'
             }`}>
               {secondRowSteps.map((step, index) => (
                 <StepCard 
