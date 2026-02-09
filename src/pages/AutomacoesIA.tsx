@@ -9,7 +9,7 @@ import JourneySectionWithReveal from "@/components/JourneySectionWithReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import automacoesCard from "@/assets/automacoes-ia-card.png";
+import bannerAutomacao from "@/assets/banner-page-automacao.png";
 
 const AutomacoesIA = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -36,7 +36,7 @@ const AutomacoesIA = () => {
           <div 
             className="absolute inset-0 bg-cover bg-no-repeat"
             style={{
-              backgroundImage: `url(${automacoesCard})`,
+              backgroundImage: `url(${bannerAutomacao})`,
               backgroundPosition: 'center',
               transform: `translateY(${scrollY * 0.5}px)`,
             }}
