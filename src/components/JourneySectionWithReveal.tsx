@@ -1,12 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 
-interface StepCardProps {
+interface StepItem {
   stepNumber: string;
   title: string;
   description: string;
+}
+
+interface StepCardProps extends StepItem {
   delay: number;
   isVisible: boolean;
+}
+
+interface JourneySectionProps {
+  steps?: StepItem[];
 }
 
 const StepCard = ({ stepNumber, title, description, delay, isVisible }: StepCardProps) => (
@@ -45,7 +52,7 @@ const StepCard = ({ stepNumber, title, description, delay, isVisible }: StepCard
   </div>
 );
 
-const JourneySectionWithReveal = () => {
+const JourneySectionWithReveal = ({ steps: customSteps }: JourneySectionProps = {}) => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -70,7 +77,7 @@ const JourneySectionWithReveal = () => {
     };
   }, []);
 
-  const steps = [
+  const defaultSteps: StepItem[] = [
     {
       stepNumber: "1° Etapa",
       title: "Briefing",
@@ -97,6 +104,10 @@ const JourneySectionWithReveal = () => {
       description: "Site publicado, otimizado e pronto para gerar resultados desde o primeiro dia."
     }
   ];
+
+  const steps = customSteps || defaultSteps;
+  const firstRowCount = steps.length <= 5 ? 3 : Math.ceil(steps.length / 2);
+  const secondRowSteps = steps.slice(firstRowCount);
 
   return (
     <section ref={sectionRef} className="py-20 px-6" style={{ backgroundColor: "#191518" }}>
@@ -129,9 +140,9 @@ const JourneySectionWithReveal = () => {
 
         {/* Cards das Etapas - Layout de Funil */}
         <div className="flex flex-col gap-6">
-          {/* Primeira linha: 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {steps.slice(0, 3).map((step, index) => (
+          {/* Primeira linha */}
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-6`}>
+            {steps.slice(0, firstRowCount).map((step, index) => (
               <StepCard 
                 key={step.title}
                 {...step}
@@ -141,17 +152,21 @@ const JourneySectionWithReveal = () => {
             ))}
           </div>
 
-          {/* Segunda linha: 2 cards centralizados (formato funil) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
-            {steps.slice(3, 5).map((step, index) => (
-              <StepCard 
-                key={step.title}
-                {...step}
-                delay={500 + (index * 100)}
-                isVisible={isVisible}
-              />
-            ))}
-          </div>
+          {/* Segunda linha: cards centralizados (formato funil) */}
+          {secondRowSteps.length > 0 && (
+            <div className={`grid grid-cols-1 gap-6 mx-auto w-full ${
+              secondRowSteps.length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-6xl'
+            }`}>
+              {secondRowSteps.map((step, index) => (
+                <StepCard 
+                  key={step.title}
+                  {...step}
+                  delay={200 + (firstRowCount + index) * 100}
+                  isVisible={isVisible}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Linha divisória */}
