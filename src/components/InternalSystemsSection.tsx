@@ -26,6 +26,7 @@ const InternalSystemsSection = () => {
               src={sistemaPrincipal} 
               alt="Dashboard CRM personalizado" 
               className="w-auto max-w-full max-h-[600px] object-contain"
+              loading="lazy"
             />
           </div>
 
@@ -66,6 +67,7 @@ const InternalSystemsSection = () => {
                 src={sistemaPrincipal} 
                 alt="Dashboard CRM personalizado" 
                 className="w-full max-w-lg mx-auto object-contain"
+                loading="lazy"
               />
             </div>
 

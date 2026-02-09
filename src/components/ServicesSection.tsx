@@ -138,6 +138,7 @@ const ServicesSection = () => {
                         src={service.image} 
                         alt={service.title}
                         className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black/40 rounded-3xl" />
                     </>
