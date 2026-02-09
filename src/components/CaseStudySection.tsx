@@ -33,6 +33,7 @@ const CaseStudySection = () => {
                   src={institutoMecaImage} 
                   alt="Instituto MECA - Medicina Estética e Capilar Avançada"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               {/* Decorative element */}

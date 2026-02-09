@@ -15,6 +15,7 @@ const Footer = () => {
                 src={logoFooter} 
                 alt="Aceleron Tecnologias Logo" 
                 className="h-32 md:h-48 w-auto"
+                loading="lazy"
               />
             </div>
             <p className="text-black max-w-md leading-relaxed text-sm md:text-base">

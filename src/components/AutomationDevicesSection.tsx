@@ -45,6 +45,7 @@ const AutomationDevicesSection = () => {
                 src={iotDevice} 
                 alt="Dispositivo IoT personalizado" 
                 className="w-48 h-auto mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+                loading="lazy"
               />
             </div>
 
@@ -69,6 +70,7 @@ const AutomationDevicesSection = () => {
               src={iotDevice} 
               alt="Dispositivo IoT personalizado" 
               className="w-64 md:w-72 lg:w-80 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              loading="lazy"
             />
           </div>
         </div>

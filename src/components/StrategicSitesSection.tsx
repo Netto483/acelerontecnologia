@@ -41,6 +41,7 @@ const StrategicSitesSection = () => {
                 src={strategicSiteExample} 
                 alt="Site estratégico com dashboard de conversão" 
                 className="w-full max-w-md mx-auto object-contain"
+                loading="lazy"
               />
             </div>
 
@@ -61,6 +62,7 @@ const StrategicSitesSection = () => {
               src={strategicSiteExample} 
               alt="Site estratégico com dashboard de conversão" 
               className="w-auto max-w-full max-h-[600px] object-contain"
+              loading="lazy"
             />
           </div>
         </div>

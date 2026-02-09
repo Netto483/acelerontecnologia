@@ -61,6 +61,7 @@ const AICustomerServiceSection = () => {
               src={whatsappChat}
               alt="Chat de atendimento com IA"
               className="w-full max-w-md rounded-lg shadow-lg"
+              loading="lazy"
             />
           </div>
         </div>

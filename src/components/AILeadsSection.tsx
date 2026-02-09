@@ -50,6 +50,7 @@ const AILeadsSection = () => {
                 src={automacoesCard} 
                 alt="Automações com Inteligência Artificial" 
                 className="w-full max-w-md mx-auto object-contain rounded-lg"
+                loading="lazy"
               />
             </div>
 

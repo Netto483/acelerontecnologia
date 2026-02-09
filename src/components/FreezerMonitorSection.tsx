@@ -1,18 +1,17 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import freezerBackground from "@/assets/freezer-background.png";
 
 const FreezerMonitorSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const bgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [parallaxOffset, setParallaxOffset] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionRef.current) {
+      if (sectionRef.current && bgRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        const scrollProgress = -rect.top;
-        setParallaxOffset(scrollProgress * 0.15);
+        bgRef.current.style.transform = `translateY(${-rect.top * 0.15}px)`;
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -32,11 +31,9 @@ const FreezerMonitorSection = () => {
     >
       {/* Parallax Background image */}
       <div 
-        className="absolute inset-[-50px] bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url(${freezerBackground})`,
-          transform: `translateY(${parallaxOffset}px)`,
-        }}
+        ref={bgRef}
+        className="absolute inset-[-50px] bg-cover bg-center will-change-transform"
+        style={{ backgroundImage: `url(${freezerBackground})` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60" />
