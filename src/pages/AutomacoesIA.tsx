@@ -4,6 +4,8 @@ import ContactFormSection from "@/components/ContactFormSection";
 import AICustomerServiceSection from "@/components/AICustomerServiceSection";
 import AIStatsSection from "@/components/AIStatsSection";
 import AIVsHumanSection from "@/components/AIVsHumanSection";
+import AIProcessAutomationSection from "@/components/AIProcessAutomationSection";
+import JourneySectionWithReveal from "@/components/JourneySectionWithReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -88,6 +90,20 @@ const AutomacoesIA = () => {
 
         {/* IA vs Humano */}
         <AIVsHumanSection />
+
+        {/* Automação de processos */}
+        <AIProcessAutomationSection />
+
+        {/* A Sua Jornada Conosco */}
+        <JourneySectionWithReveal 
+          variant="light"
+          steps={[
+            { stepNumber: "1° Etapa", title: "Entendimento e Mapeamento", description: "Conhecemos a empresa, seus setores, processos, desafios operacionais e desenhamos os fluxos atuais, identificando pontos de melhoria e automação." },
+            { stepNumber: "2° Etapa", title: "Desenho das automações", description: "Criamos os fluxos, regras e exceções de cada processo." },
+            { stepNumber: "3° Etapa", title: "Implementação de teste", description: "Testamos as automações em cenários reais para garantir estabilidade." },
+            { stepNumber: "4° Etapa", title: "Entrega", description: "Entregamos as automações e acompanhamos a operação inicial." },
+          ]}
+        />
 
         {/* Formulário de Contato */}
         <ContactFormSection />

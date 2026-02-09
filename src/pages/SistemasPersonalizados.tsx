@@ -91,7 +91,7 @@ const SistemasPersonalizados = () => {
         <DataUnifiedSection />
 
         {/* Seção: A Sua Jornada Conosco */}
-        <JourneySectionWithReveal steps={[
+        <JourneySectionWithReveal variant="light" steps={[
           { stepNumber: "1° Etapa", title: "Diagnóstico & Briefing", description: "Aqui mapeamos como a empresa funciona hoje e o que precisa melhorar." },
           { stepNumber: "2° Etapa", title: "Arquitetura & Planejamento do Sistema", description: "Definimos a estrutura do sistema, módulos, integrações, regras de negócio, níveis de acesso e segurança." },
           { stepNumber: "3° Etapa", title: "Protótipo", description: "Criamos protótipos navegáveis para validar telas, fluxos e usabilidade antes de desenvolver." },

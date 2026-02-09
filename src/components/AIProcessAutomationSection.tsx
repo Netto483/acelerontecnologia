@@ -1,17 +1,16 @@
-import { MessageCircle, Clock, DollarSign, Brain } from "lucide-react";
+import { Cog, Zap, BarChart3, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import whatsappChat from "@/assets/whatsapp-ia-chat.png";
 
-const AICustomerServiceSection = () => {
+const AIProcessAutomationSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const features = [
-    { icon: MessageCircle, text: "Respostas naturais" },
-    { icon: Clock, text: "Atende enquanto sua empresa está fechada" },
-    { icon: DollarSign, text: "Custa até 10X menos que um funcionário ao ano" },
-    { icon: Brain, text: "Conhece tudo da sua empresa" },
+    { icon: Cog, text: "Automatize do comercial ao financeiro" },
+    { icon: Zap, text: "Elimine processos manuais e repetitivos" },
+    { icon: BarChart3, text: "Opere com eficiência total em todos os setores" },
+    { icon: Workflow, text: "Fluxos inteligentes do atendimento à operação" },
   ];
 
   return (
@@ -26,12 +25,10 @@ const AICustomerServiceSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side - Content */}
           <div className="flex-1">
-            {/* Title */}
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
-              Atenda seus clientes usando IA
+              Automação de processos
             </h2>
 
-            {/* Features list */}
             <ul className="space-y-4 mb-8">
               {features.map((feature, index) => (
                 <li
@@ -44,25 +41,21 @@ const AICustomerServiceSection = () => {
               ))}
             </ul>
 
-            {/* CTA Button */}
             <Button
               variant="default"
               className="bg-[#EB1614] hover:bg-[#EB1614]/90 text-white font-thin text-sm md:text-base group"
               onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Quero uma IA atendendo meus clientes
+              Quero automatizar processos
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
-          {/* Right side - Image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <img
-              src={whatsappChat}
-              alt="Chat de atendimento com IA"
-              className="w-full max-w-lg lg:max-w-xl"
-              loading="lazy"
-            />
+          {/* Right side - Text */}
+          <div className="flex-1">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              Automatize todos os setores possíveis da sua empresa e pare de depender de processos manuais. Comece a operar com eficiência total. Do comercial ao financeiro, do atendimento à operação.
+            </p>
           </div>
         </div>
       </div>
@@ -70,4 +63,4 @@ const AICustomerServiceSection = () => {
   );
 };
 
-export default AICustomerServiceSection;
+export default AIProcessAutomationSection;
