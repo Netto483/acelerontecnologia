@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const ContactFormSection = () => {
@@ -28,20 +29,32 @@ const ContactFormSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+    const { error } = await supabase.from("leads").insert({
+      nome: formData.nome.trim(),
+      nome_empresa: formData.nomeEmpresa.trim(),
+      ramo_empresarial: formData.ramoEmpresarial.trim(),
+      mensagem: formData.mensagem.trim(),
     });
 
-    setFormData({
-      nome: "",
-      nomeEmpresa: "",
-      ramoEmpresarial: "",
-      mensagem: "",
-    });
+    if (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+      });
+      setFormData({
+        nome: "",
+        nomeEmpresa: "",
+        ramoEmpresarial: "",
+        mensagem: "",
+      });
+    }
+
     setIsSubmitting(false);
   };
 
