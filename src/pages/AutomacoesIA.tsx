@@ -102,6 +102,7 @@ const AutomacoesIA = () => {
             { stepNumber: "2° Etapa", title: "Desenho das automações", description: "Criamos os fluxos, regras e exceções de cada processo." },
             { stepNumber: "3° Etapa", title: "Implementação de teste", description: "Testamos as automações em cenários reais para garantir estabilidade." },
             { stepNumber: "4° Etapa", title: "Entrega", description: "Entregamos as automações e acompanhamos a operação inicial." },
+            { stepNumber: "5° Etapa", title: "Acompanhamento & Evolução", description: "Ajustamos e expandimos as automações conforme a empresa evolui." },
           ]}
         />
 

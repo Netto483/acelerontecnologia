@@ -25,6 +25,9 @@ const AIProcessAutomationSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side - Content */}
           <div className="flex-1">
+            <span className="text-sm mb-2 block" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400, color: "#EB1614" }}>
+              Chega de tarefas manuais
+            </span>
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
               Automação de processos
             </h2>
@@ -53,8 +56,11 @@ const AIProcessAutomationSection = () => {
 
           {/* Right side - Text */}
           <div className="flex-1">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Automatize todos os setores possíveis da sua empresa e pare de depender de processos manuais. Comece a operar com eficiência total. Do comercial ao financeiro, do atendimento à operação.
+            </p>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed mt-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              Atividades que antes consumiam tempo do time passam a acontecer de forma automática, com mais agilidade e menos erros.
             </p>
           </div>
         </div>
