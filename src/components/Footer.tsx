@@ -11,12 +11,14 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img 
-                src={logoFooter} 
-                alt="Aceleron Tecnologias Logo" 
-                className="h-32 md:h-48 w-auto"
-                loading="lazy"
-              />
+              <Link to="/">
+                <img 
+                  src={logoFooter} 
+                  alt="Aceleron Tecnologias Logo" 
+                  className="h-32 md:h-48 w-auto"
+                  loading="lazy"
+                />
+              </Link>
             </div>
             <p className="text-black max-w-md leading-relaxed text-sm md:text-base">
               Criamos soluções de hardware e software para empresas que querem operar melhor, vender mais e crescer com tecnologia.
@@ -55,7 +57,7 @@ const Footer = () => {
             <h4 className="font-display font-semibold mb-4 text-black">Contato</h4>
             <ul className="space-y-2 md:space-y-3 text-black text-sm md:text-base">
               <li className="break-all">joaofirmino@aceleronai.com.br</li>
-              <li>(82) 991881260</li>
+              <li>(82) 9 9990-7820</li>
               <li>Maceió - AL</li>
             </ul>
           </div>
