@@ -139,9 +139,9 @@ const JourneySectionWithReveal = ({ steps: customSteps, variant = "dark" }: Jour
 
           {secondRowSteps.length > 0 && (
             <div className={`grid grid-cols-1 gap-6 mx-auto w-full ${
-              secondRowSteps.length === 1 ? 'md:grid-cols-1 max-w-sm' :
-              secondRowSteps.length === 2 ? 'md:grid-cols-2 max-w-[calc(66.666%+0.75rem)]' :
-              'md:grid-cols-3 max-w-6xl'
+              secondRowSteps.length === 1 ? 'md:grid-cols-1 md:max-w-sm' :
+              secondRowSteps.length === 2 ? 'md:grid-cols-2 md:max-w-[calc(66.666%+0.75rem)]' :
+              'md:grid-cols-3 md:max-w-6xl'
             }`}>
               {secondRowSteps.map((step, index) => (
                 <StepCard 
