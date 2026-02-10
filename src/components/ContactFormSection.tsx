@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,11 +6,40 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import useScrollReveal from "@/hooks/useScrollReveal";
+import { z } from "zod";
+
+const leadSchema = z.object({
+  nome: z
+    .string()
+    .trim()
+    .min(2, "Nome deve ter pelo menos 2 caracteres.")
+    .max(100, "Nome deve ter no máximo 100 caracteres.")
+    .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Nome contém caracteres inválidos."),
+  nomeEmpresa: z
+    .string()
+    .trim()
+    .min(2, "Nome da empresa deve ter pelo menos 2 caracteres.")
+    .max(150, "Nome da empresa deve ter no máximo 150 caracteres."),
+  ramoEmpresarial: z
+    .string()
+    .trim()
+    .min(2, "Ramo empresarial deve ter pelo menos 2 caracteres.")
+    .max(100, "Ramo empresarial deve ter no máximo 100 caracteres."),
+  mensagem: z
+    .string()
+    .trim()
+    .min(10, "Mensagem deve ter pelo menos 10 caracteres.")
+    .max(2000, "Mensagem deve ter no máximo 2000 caracteres."),
+});
+
+const RATE_LIMIT_MS = 30_000; // 30 seconds between submissions
 
 const ContactFormSection = () => {
   const { ref, isVisible } = useScrollReveal();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const lastSubmitRef = useRef<number>(0);
   const [formData, setFormData] = useState({
     nome: "",
     nomeEmpresa: "",
@@ -23,17 +52,55 @@ const ContactFormSection = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear field error on change
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+
+    // Rate limiting
+    const now = Date.now();
+    if (now - lastSubmitRef.current < RATE_LIMIT_MS) {
+      toast({
+        title: "Aguarde um momento",
+        description: "Você já enviou uma mensagem recentemente. Tente novamente em alguns segundos.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate with Zod
+    const result = leadSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as string;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
     setIsSubmitting(true);
+    lastSubmitRef.current = now;
+
+    const validated = result.data;
 
     const { error } = await supabase.from("leads").insert({
-      nome: formData.nome.trim(),
-      nome_empresa: formData.nomeEmpresa.trim(),
-      ramo_empresarial: formData.ramoEmpresarial.trim(),
-      mensagem: formData.mensagem.trim(),
+      nome: validated.nome,
+      nome_empresa: validated.nomeEmpresa,
+      ramo_empresarial: validated.ramoEmpresarial,
+      mensagem: validated.mensagem,
     });
 
     if (error) {
@@ -79,7 +146,7 @@ const ContactFormSection = () => {
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6" noValidate>
           <div className="space-y-2">
             <Label htmlFor="nome" className="font-subtitle text-white">
               Nome
@@ -91,9 +158,11 @@ const ContactFormSection = () => {
               placeholder="Seu nome completo"
               value={formData.nome}
               onChange={handleChange}
+              maxLength={100}
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
             />
+            {errors.nome && <p className="text-red-400 text-sm">{errors.nome}</p>}
           </div>
 
           <div className="space-y-2">
@@ -107,9 +176,11 @@ const ContactFormSection = () => {
               placeholder="Nome da sua empresa"
               value={formData.nomeEmpresa}
               onChange={handleChange}
+              maxLength={150}
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
             />
+            {errors.nomeEmpresa && <p className="text-red-400 text-sm">{errors.nomeEmpresa}</p>}
           </div>
 
           <div className="space-y-2">
@@ -123,9 +194,11 @@ const ContactFormSection = () => {
               placeholder="Ex: Tecnologia, Varejo, Indústria..."
               value={formData.ramoEmpresarial}
               onChange={handleChange}
+              maxLength={100}
               required
               className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
             />
+            {errors.ramoEmpresarial && <p className="text-red-400 text-sm">{errors.ramoEmpresarial}</p>}
           </div>
 
           <div className="space-y-2">
@@ -138,10 +211,12 @@ const ContactFormSection = () => {
               placeholder="Descreva os desafios que sua empresa enfrenta e como podemos ajudar..."
               value={formData.mensagem}
               onChange={handleChange}
+              maxLength={2000}
               required
               rows={5}
               className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary resize-none"
             />
+            {errors.mensagem && <p className="text-red-400 text-sm">{errors.mensagem}</p>}
           </div>
 
           <Button
