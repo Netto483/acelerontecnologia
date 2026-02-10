@@ -38,13 +38,23 @@ const Header = () => {
             ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20" 
             : "bg-transparent"
         }`}>
-          <Link to="/" className="flex items-center">
+          <a
+            href="/"
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.location.reload();
+              }
+            }}
+            className="flex items-center"
+          >
             <img 
               src={aoIcon} 
               alt="Aceleron Logo" 
               className="h-10 md:h-12 w-auto"
             />
-          </Link>
+          </a>
           
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8">
