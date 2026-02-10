@@ -7,19 +7,17 @@ import DataUnifiedSection from "@/components/DataUnifiedSection";
 import JourneySectionWithReveal from "@/components/JourneySectionWithReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import crmDashboard from "@/assets/crm-dashboard.png";
 
 const SistemasPersonalizados = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Garante que a página sempre abra no topo ao navegar para esta rota
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    setScrollY(0);
-
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (bgRef.current) {
+        bgRef.current.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,11 +31,11 @@ const SistemasPersonalizados = () => {
         <section className="relative min-h-screen flex items-center pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
           {/* Parallax Background */}
           <div 
-            className="absolute inset-0 bg-cover bg-no-repeat"
+            ref={bgRef}
+            className="absolute inset-0 bg-cover bg-no-repeat will-change-transform"
             style={{
               backgroundImage: `url(${crmDashboard})`,
               backgroundPosition: 'center right',
-              transform: `translateY(${scrollY * 0.5}px)`,
             }}
           />
 
