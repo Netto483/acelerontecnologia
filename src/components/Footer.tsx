@@ -11,14 +11,22 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <Link to="/">
+              <a
+                href="/"
+                onClick={(e) => {
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    window.location.reload();
+                  }
+                }}
+              >
                 <img 
                   src={logoFooter} 
                   alt="Aceleron Tecnologias Logo" 
                   className="h-32 md:h-48 w-auto"
                   loading="lazy"
                 />
-              </Link>
+              </a>
             </div>
             <p className="text-black max-w-md leading-relaxed text-sm md:text-base">
               Criamos soluções de hardware e software para empresas que querem operar melhor, vender mais e crescer com tecnologia.
