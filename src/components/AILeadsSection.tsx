@@ -44,14 +44,22 @@ const AILeadsSection = () => {
               </li>
             </ul>
 
-            {/* Mobile image - above button */}
+            {/* Mobile: WhatsApp chat (same as desktop) */}
             <div className="md:hidden mb-6">
-              <img 
-                src={automacoesCard} 
-                alt="Automações com Inteligência Artificial" 
-                className="w-full max-w-md mx-auto object-contain rounded-lg"
-                loading="lazy"
-              />
+              <div className="flex flex-col gap-3 w-full max-w-sm mx-auto">
+                <div className="flex justify-end">
+                  <div className="bg-[#DCF8C6] text-gray-900 px-4 py-2 rounded-2xl rounded-tr-sm max-w-[80%] shadow-lg">
+                    <p className="text-base">Olá</p>
+                    <span className="text-xs text-gray-500 float-right mt-1 ml-3">10:30</span>
+                  </div>
+                </div>
+                <div className="flex justify-start">
+                  <div className="bg-white text-gray-900 px-4 py-2 rounded-2xl rounded-tl-sm max-w-[90%] shadow-lg border border-gray-100">
+                    <p className="text-base">Olá, sou a Ana, atendente da Clínica Mais Cabelo. Como posso te ajudar?😁</p>
+                    <span className="text-xs text-gray-500 float-right mt-1 ml-3">10:30</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Link style button */}
