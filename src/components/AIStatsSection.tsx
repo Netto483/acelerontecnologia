@@ -28,7 +28,7 @@ const AIStatsSection = () => {
     {
       icon: DollarSign,
       label: "Preços:",
-      value: "a partir de R$999,00",
+      value: "a partir de R$999,00(pagamento único)",
     },
   ];
 

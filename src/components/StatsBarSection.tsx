@@ -33,7 +33,7 @@ const StatsBarSection = () => {
     {
       icon: DollarSign,
       label: "Preços:",
-      value: "a partir de R$1500,00",
+      value: "a partir de R$1.990,00",
     },
   ];
 
