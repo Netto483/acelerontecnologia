@@ -12,8 +12,8 @@ const AIVsHumanSection = () => {
     },
     {
       category: "Custo mensal",
-      ai: "A partir de R$999",
-      human: "R$3.000+ (salário + encargos)",
+      ai: "A partir de R$999,00(pagamento único)",
+      human: "R$2.000,00 + riscos",
     },
     {
       category: "Disponibilidade",
