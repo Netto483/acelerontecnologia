@@ -43,8 +43,8 @@ const StatsBarSection = () => {
         <stat.icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="text-gray-400 text-xs md:text-sm truncate">{stat.label}</span>
-        <span className="text-white font-semibold text-xs md:text-base truncate">{stat.value}</span>
+        <span className="text-gray-400 text-xs md:text-sm">{stat.label}</span>
+        <span className="text-white font-semibold text-xs md:text-base leading-tight">{stat.value}</span>
       </div>
     </div>
   );
