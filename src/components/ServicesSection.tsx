@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import dispositivosCard from "@/assets/dispositivos-card.png";
-import sitesCard from "@/assets/sites-card.png";
-import sistemasCard from "@/assets/sistemas-card.png";
-import automacoesIaCard from "@/assets/automacoes-ia-card.png";
+import dispositivosCard from "@/assets/dispositivos-card.png?format=webp&quality=80";
+import sitesCard from "@/assets/sites-card.png?format=webp&quality=80";
+import sistemasCard from "@/assets/sistemas-card.png?format=webp&quality=80";
+import automacoesIaCard from "@/assets/automacoes-ia-card.png?format=webp&quality=80";
 
 const services = [
   {
@@ -52,12 +52,10 @@ const ServicesSection = () => {
     setActiveIndex(index);
   };
 
-  // Calculate positions for each card
   const getCardPosition = (index: number) => {
     const diff = index - activeIndex;
     const normalizedDiff = ((diff + services.length) % services.length);
     
-    // Map positions: 0 = center, 1 = right, 2 = far right/hidden, 3 = left
     if (normalizedDiff === 0) return "center";
     if (normalizedDiff === 1) return "right";
     if (normalizedDiff === services.length - 1) return "left";
@@ -67,20 +65,16 @@ const ServicesSection = () => {
   return (
     <section id="servicos" className="py-20 px-4 md:px-8 bg-[#171417]">
       <div className="max-w-7xl mx-auto">
-        {/* Title */}
         <h2 className="font-subtitle text-3xl md:text-4xl lg:text-5xl text-center text-white mb-4">
           <span className="font-thin">Entenda mais</span>{" "}
           <span className="font-bold">sobre nossos serviços</span>
         </h2>
 
-        {/* Subtitle */}
         <p className="font-subtitle text-lg md:text-xl text-white/70 text-center mb-16">
           Como nossos serviços irão atuar na sua empresa
         </p>
 
-        {/* Carousel Container */}
         <div className="relative">
-          {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-white hover:scale-110 transition-all duration-300 -translate-x-4 md:-translate-x-6"
@@ -95,7 +89,6 @@ const ServicesSection = () => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Cards Container */}
           <div className="relative h-[400px] md:h-[450px] flex items-center justify-center px-8 md:px-16">
             {services.map((service, index) => {
               const position = getCardPosition(index);
@@ -104,7 +97,6 @@ const ServicesSection = () => {
 
               const isCenter = position === "center";
               const isLeft = position === "left";
-              const isRight = position === "right";
 
               return (
                 <Link
@@ -131,14 +123,16 @@ const ServicesSection = () => {
                     }
                   }}
                 >
-                  {/* Glass Background */}
                   {service.image ? (
                     <>
                       <img 
                         src={service.image} 
                         alt={service.title}
+                        width={500}
+                        height={400}
                         className="absolute inset-0 w-full h-full object-cover rounded-3xl"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-black/40 rounded-3xl" />
                     </>
@@ -150,7 +144,6 @@ const ServicesSection = () => {
                   )}
                   <div className="absolute inset-0 border border-gray-300/50 rounded-3xl" />
                   
-                  {/* Content */}
                   <div className="relative h-full p-8 md:p-10 flex flex-col justify-end">
                     <h3 className={`font-subtitle font-bold mb-3 transition-all duration-300 ${
                       isCenter ? "text-2xl md:text-3xl" : "text-xl"
@@ -178,7 +171,6 @@ const ServicesSection = () => {
             })}
           </div>
 
-          {/* Dots Indicator */}
           <div className="flex justify-center gap-3 mt-10">
             {services.map((_, index) => (
               <button

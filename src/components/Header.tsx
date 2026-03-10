@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import aoIcon from "@/assets/ao-icon.png";
+import aoIcon from "@/assets/ao-icon.png?format=webp&quality=80";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -52,7 +52,10 @@ const Header = () => {
             <img 
               src={aoIcon} 
               alt="Aceleron Logo" 
+              width={48}
+              height={48}
               className="h-10 md:h-12 w-auto"
+              decoding="async"
             />
           </a>
           

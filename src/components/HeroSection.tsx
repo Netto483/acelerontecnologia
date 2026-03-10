@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useCallback } from "react";
-import heroBackground from "@/assets/hero-background.png";
+import heroBackground from "@/assets/hero-background.png?format=webp&quality=80";
 
 const HeroSection = () => {
   const bgRef = useRef<HTMLDivElement>(null);

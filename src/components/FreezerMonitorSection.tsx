@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import freezerBackground from "@/assets/freezer-background.png";
+import freezerBackground from "@/assets/freezer-background.png?format=webp&quality=80";
 
 const FreezerMonitorSection = () => {
   const { ref, isVisible } = useScrollReveal();

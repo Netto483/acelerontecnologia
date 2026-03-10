@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import institutoMecaImage from "@/assets/instituto-meca.png";
+import institutoMecaImage from "@/assets/instituto-meca.png?format=webp&quality=80";
 
 const CaseStudySection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -13,35 +13,32 @@ const CaseStudySection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center md:hidden"
         style={{ backgroundImage: `url(${institutoMecaImage})` }}
       />
       <div className="absolute inset-0 bg-black/70 md:hidden" />
-      
-      {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 py-12 md:py-0">
-          {/* Image - Left side (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-start">
             <div className="relative w-full max-w-md lg:max-w-lg">
               <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border overflow-hidden">
                 <img 
                   src={institutoMecaImage} 
                   alt="Instituto MECA - Medicina Estética e Capilar Avançada"
+                  width={520}
+                  height={390}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
-              {/* Decorative element */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
             </div>
           </div>
 
-          {/* Content - Right side */}
           <div className="text-left flex-1 max-w-xl">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Case de Sucesso
@@ -56,7 +53,6 @@ const CaseStudySection = () => {
               da sua operação e reduzir custos.
             </p>
 
-            {/* Link style button */}
             <a
               href="#contato"
               onClick={(e) => {

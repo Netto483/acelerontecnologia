@@ -1,5 +1,5 @@
 import { ArrowRight, Database, Settings, BarChart3 } from "lucide-react";
-import sistemaPrincipal from "@/assets/sistema-principal.png";
+import sistemaPrincipal from "@/assets/sistema-principal.png?format=webp&quality=80";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const InternalSystemsSection = () => {
@@ -12,25 +12,23 @@ const InternalSystemsSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Light background */}
       <div className="absolute inset-0 bg-[#F5F4F3] md:hidden" />
-      
-      {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-12 md:py-0">
-          {/* Image - Left side (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-start order-2 lg:order-1">
             <img 
               src={sistemaPrincipal} 
               alt="Dashboard CRM personalizado" 
+              width={600}
+              height={450}
               className="w-auto max-w-full max-h-[600px] object-contain"
               loading="lazy"
+              decoding="async"
             />
           </div>
 
-          {/* Content - Right side */}
           <div className="text-left flex-1 max-w-2xl order-1 lg:order-2">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sistemas Personalizados
@@ -45,7 +43,6 @@ const InternalSystemsSection = () => {
               aos processos dela, aumentando a eficiência e reduzindo dados dispersos.
             </p>
 
-            {/* Features list */}
             <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
               <li className="flex items-center gap-3 text-gray-600">
                 <Database className="w-5 h-5 text-[#EB1614]" />
@@ -61,17 +58,18 @@ const InternalSystemsSection = () => {
               </li>
             </ul>
 
-            {/* Mobile image - above button */}
             <div className="md:hidden mb-6">
               <img 
                 src={sistemaPrincipal} 
                 alt="Dashboard CRM personalizado" 
+                width={480}
+                height={360}
                 className="w-full max-w-lg mx-auto object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
-            {/* Link style button */}
             <a
               href="#contato"
               onClick={(e) => {

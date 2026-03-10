@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import strategicSiteExample from "@/assets/strategic-sites-section.png";
+import strategicSiteExample from "@/assets/strategic-sites-section.png?format=webp&quality=80";
 
 const StrategicSitesSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -12,15 +12,11 @@ const StrategicSitesSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Dark background */}
       <div className="absolute inset-0 bg-[#171417] md:hidden" />
-      
-      {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#F5F4F3] hidden md:block" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 py-12 md:py-0">
-          {/* Content - Left side */}
           <div className="flex-1 text-left">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sites Estratégicos
@@ -35,17 +31,18 @@ const StrategicSitesSection = () => {
               copywriting persuasivo e otimização para SEO.
             </p>
 
-            {/* Mobile image - above button */}
             <div className="md:hidden mb-6">
               <img 
                 src={strategicSiteExample} 
                 alt="Site estratégico com dashboard de conversão" 
+                width={448}
+                height={336}
                 className="w-full max-w-md mx-auto object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
-            {/* Link style button */}
             <a 
               href="/sites-estrategicos"
               className="inline-flex items-center gap-2 text-white md:text-gray-900 font-semibold text-base md:text-lg group hover:text-[#EB1614] transition-colors relative cursor-pointer"
@@ -56,13 +53,15 @@ const StrategicSitesSection = () => {
             </a>
           </div>
 
-          {/* Image - Right side (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-end">
             <img 
               src={strategicSiteExample} 
               alt="Site estratégico com dashboard de conversão" 
+              width={600}
+              height={450}
               className="w-auto max-w-full max-h-[600px] object-contain"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
