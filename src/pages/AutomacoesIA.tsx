@@ -8,29 +8,36 @@ import AIProcessAutomationSection from "@/components/AIProcessAutomationSection"
 import JourneySectionWithReveal from "@/components/JourneySectionWithReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef } from "react";
-import bannerAutomacao from "@/assets/banner-page-automacao.png";
+import { useEffect, useRef, useCallback } from "react";
+import bannerAutomacao from "@/assets/banner-page-automacao.png?format=webp&quality=80";
 
 const AutomacoesIA = () => {
   const bgRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  const handleScroll = useCallback(() => {
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
       if (bgRef.current) {
         bgRef.current.style.transform = `translateY(${window.scrollY * 0.5}px)`;
       }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+      rafRef.current = 0;
+    });
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [handleScroll]);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
         <section className="relative min-h-screen flex items-center pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden">
-          {/* Parallax Background */}
           <div 
             ref={bgRef}
             className="absolute inset-0 bg-cover bg-no-repeat will-change-transform"
@@ -39,21 +46,16 @@ const AutomacoesIA = () => {
               backgroundPosition: 'center',
             }}
           />
-
-          {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
 
           <div className="relative max-w-7xl mx-auto w-full">
             <div className="max-w-3xl text-left">
-              {/* Main Headline */}
               <h1 
                 className="font-subtitle text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6 animate-fade-in text-white"
                 style={{ animationDelay: '0.1s' }}
               >
                 Automações com IA.
               </h1>
-
-              {/* Subtitle */}
               <p 
                 className="text-base md:text-xl text-white/80 max-w-2xl mb-8 md:mb-10 animate-fade-in"
                 style={{ animationDelay: '0.2s' }}
@@ -61,12 +63,7 @@ const AutomacoesIA = () => {
                 Inteligência artificial aplicada para automatizar tarefas repetitivas, 
                 economizar recursos e multiplicar os resultados da sua empresa.
               </p>
-
-              {/* CTA Button */}
-              <div 
-                className="animate-fade-in"
-                style={{ animationDelay: '0.3s' }}
-              >
+              <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <Button 
                   variant="hero" 
                   className="group font-thin text-sm md:text-base"
@@ -80,19 +77,11 @@ const AutomacoesIA = () => {
           </div>
         </section>
 
-        {/* Atenda seus clientes usando IA */}
         <AICustomerServiceSection />
-
-        {/* Stats Section */}
         <AIStatsSection />
-
-        {/* IA vs Humano */}
         <AIVsHumanSection />
-
-        {/* Automação de processos */}
         <AIProcessAutomationSection />
 
-        {/* A Sua Jornada Conosco */}
         <JourneySectionWithReveal 
           variant="light"
           steps={[
@@ -104,7 +93,6 @@ const AutomacoesIA = () => {
           ]}
         />
 
-        {/* Formulário de Contato */}
         <ContactFormSection />
       </main>
       <Footer />
