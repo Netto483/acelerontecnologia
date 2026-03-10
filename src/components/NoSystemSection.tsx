@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import aoIcon from "@/assets/ao-icon.png";
+import aoIcon from "@/assets/ao-icon.png?format=webp&quality=80";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const NoSystemSection = () => {
@@ -15,16 +15,15 @@ const NoSystemSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
-          {/* Left side - Logo + Title */}
           <div className="flex-1">
-            {/* Logo */}
             <img 
               src={aoIcon} 
               alt="Aceleron Tecnologias" 
+              width={64}
+              height={64}
               className="h-12 md:h-16 w-auto mb-6"
+              decoding="async"
             />
-            
-            {/* Title */}
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight">
               Sem{" "}
               <span className="text-[#EB1614]" style={{ fontFamily: "'Libre Baskerville', serif", fontWeight: 400 }}>Sistema</span>, Sem{" "}
@@ -33,13 +32,10 @@ const NoSystemSection = () => {
             </h2>
           </div>
 
-          {/* Right side - Text + Button */}
           <div className="flex-1 flex flex-col justify-center">
             <p className="font-subtitle text-gray-600 text-base md:text-lg leading-relaxed mb-6">
               Sem um sistema interno, a empresa perde o controle da operação, acumula erros e toma decisões no achismo. Processos manuais não escalam, a informação se perde e o crescimento vira um risco em vez de uma oportunidade.
             </p>
-
-            {/* Link style button */}
             <a
               href="#contato"
               onClick={(e) => {

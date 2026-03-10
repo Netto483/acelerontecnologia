@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoFooter from "@/assets/logo-footer.png";
+import logoFooter from "@/assets/logo-footer.png?format=webp&quality=80";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,7 +8,6 @@ const Footer = () => {
     <footer id="contato" className="py-12 md:py-16 px-4 md:px-6 border-t border-black/20 bg-[#F5F4F3]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-          {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <a
@@ -23,8 +22,11 @@ const Footer = () => {
                 <img 
                   src={logoFooter} 
                   alt="Aceleron Tecnologias Logo" 
+                  width={192}
+                  height={128}
                   className="h-32 md:h-48 w-auto"
                   loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -33,7 +35,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links */}
           <div>
             <h4 className="font-display font-semibold mb-4 text-black">Serviços</h4>
             <ul className="space-y-2 md:space-y-3">
@@ -60,7 +61,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-display font-semibold mb-4 text-black">Contato</h4>
             <ul className="space-y-2 md:space-y-3 text-black text-sm md:text-base">
@@ -71,7 +71,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-6 md:pt-8 border-t border-black/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs md:text-sm text-black text-center md:text-left">
             © {currentYear} Aceleron. Todos os direitos reservados.

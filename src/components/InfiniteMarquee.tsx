@@ -1,4 +1,4 @@
-import statsBackground from "@/assets/stats-background.png";
+import statsBackground from "@/assets/stats-background.png?format=webp&quality=80";
 
 const phrases = [
   { bold: "Corte", rest: " gastos desnecessários", thinPart: "" },
@@ -11,16 +11,13 @@ const phrases = [
 const InfiniteMarquee = () => {
   return (
     <section className="h-[98px] relative flex items-center overflow-hidden">
-      {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${statsBackground})` }}
       />
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60" />
       
       <div className="relative z-10 flex w-full">
-        {/* First copy */}
         <div className="flex animate-marquee whitespace-nowrap">
           {phrases.map((phrase, index) => (
             <span
@@ -33,7 +30,6 @@ const InfiniteMarquee = () => {
             </span>
           ))}
         </div>
-        {/* Second copy for seamless loop */}
         <div className="flex animate-marquee whitespace-nowrap" aria-hidden="true">
           {phrases.map((phrase, index) => (
             <span

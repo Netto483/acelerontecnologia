@@ -1,5 +1,5 @@
+import statsBackground from "@/assets/stats-background.png?format=webp&quality=80";
 import { Shield, CalendarCheck, Clock, Headphones, DollarSign } from "lucide-react";
-import statsBackground from "@/assets/stats-background.png";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile, useIsTablet } from "@/hooks/use-mobile";

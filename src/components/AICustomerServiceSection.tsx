@@ -2,7 +2,7 @@ import { MessageCircle, Clock, DollarSign, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import whatsappChat from "@/assets/whatsapp-ia-chat.png";
+import whatsappChat from "@/assets/whatsapp-ia-chat.png?format=webp&quality=80";
 
 const AICustomerServiceSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -24,27 +24,18 @@ const AICustomerServiceSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          {/* Left side - Content */}
           <div className="flex-1">
-            {/* Title */}
             <h2 className="font-subtitle text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
               Atenda seus clientes usando IA
             </h2>
-
-            {/* Features list */}
             <ul className="space-y-4 mb-8">
               {features.map((feature, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-3 text-gray-700 text-sm md:text-base"
-                >
+                <li key={index} className="flex items-center gap-3 text-gray-700 text-sm md:text-base">
                   <feature.icon className="w-5 h-5 text-[#EB1614] flex-shrink-0" />
                   <span>{feature.text}</span>
                 </li>
               ))}
             </ul>
-
-            {/* CTA Button */}
             <Button
               variant="default"
               className="bg-[#EB1614] hover:bg-[#EB1614]/90 text-white font-thin text-sm md:text-base group"
@@ -55,13 +46,15 @@ const AICustomerServiceSection = () => {
             </Button>
           </div>
 
-          {/* Right side - Image */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img
               src={whatsappChat}
               alt="Chat de atendimento com IA"
+              width={560}
+              height={480}
               className="w-full max-w-none md:max-w-lg lg:max-w-xl"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

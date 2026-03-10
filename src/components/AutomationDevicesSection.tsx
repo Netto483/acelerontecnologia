@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import iotDevice from "@/assets/iot-device.png";
+import iotDevice from "@/assets/iot-device.png?format=webp&quality=80";
 
 const AutomationDevicesSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -12,13 +12,9 @@ const AutomationDevicesSection = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      {/* Mobile: Same dark background as desktop */}
       <div className="absolute inset-0 bg-[#191518] md:hidden" />
-      
-      {/* Desktop: Normal background */}
       <div className="absolute inset-0 bg-[#191518] hidden md:block" />
 
-      {/* Background decoration (desktop only) */}
       <div className="absolute inset-0 pointer-events-none hidden md:block">
         <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 -left-48 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -26,7 +22,6 @@ const AutomationDevicesSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-12 py-12 md:py-0">
-          {/* Content - Left side */}
           <div className="text-left flex-1 max-w-xl">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Sensores de Monitoramento Personalizados
@@ -39,17 +34,18 @@ const AutomationDevicesSection = () => {
               Evite perdas de produtos com o monitoramento contínuo de temperatura.
             </p>
 
-            {/* Mobile image - above button */}
             <div className="md:hidden mb-6">
               <img 
                 src={iotDevice} 
                 alt="Dispositivo IoT personalizado" 
+                width={192}
+                height={240}
                 className="w-48 h-auto mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
-            {/* Link style button */}
             <a 
               href="#contato"
               onClick={(e) => {
@@ -64,13 +60,15 @@ const AutomationDevicesSection = () => {
             </a>
           </div>
 
-          {/* Image - Right side (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-start">
             <img 
               src={iotDevice} 
               alt="Dispositivo IoT personalizado" 
+              width={320}
+              height={400}
               className="w-64 md:w-72 lg:w-80 h-auto animate-float drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

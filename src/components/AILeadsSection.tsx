@@ -1,6 +1,5 @@
 import { ArrowRight, Bot, MessageSquare, Zap } from "lucide-react";
 import useScrollReveal from "@/hooks/useScrollReveal";
-import automacoesCard from "@/assets/automacoes-ia-card.png";
 
 const AILeadsSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -14,7 +13,6 @@ const AILeadsSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
-          {/* Content - Left side */}
           <div className="text-left flex-1 max-w-2xl">
             <span className="text-[#EB1614] font-semibold text-sm uppercase tracking-wider">
               Inteligência Artificial
@@ -28,7 +26,6 @@ const AILeadsSection = () => {
               seus leads automaticamente, 24 horas por dia, 7 dias por semana.
             </p>
 
-            {/* Features list */}
             <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
               <li className="flex items-center gap-3 text-muted-foreground text-sm md:text-base">
                 <MessageSquare className="w-5 h-5 text-[#EB1614] flex-shrink-0" />
@@ -44,7 +41,6 @@ const AILeadsSection = () => {
               </li>
             </ul>
 
-            {/* Mobile: WhatsApp chat (same as desktop) */}
             <div className="md:hidden mb-6">
               <div className="flex flex-col gap-3 w-full max-w-sm mx-auto">
                 <div className="flex justify-end">
@@ -62,7 +58,6 @@ const AILeadsSection = () => {
               </div>
             </div>
 
-            {/* Link style button */}
             <a
               href="#contato"
               onClick={(e) => {
@@ -77,10 +72,8 @@ const AILeadsSection = () => {
             </a>
           </div>
 
-          {/* Visual - Right side: WhatsApp-style chat (desktop only) */}
           <div className="hidden md:flex flex-1 justify-center lg:justify-end w-full">
             <div className="flex flex-col gap-4 md:gap-5 w-full max-w-md">
-              {/* User message - right aligned */}
               <div className="flex justify-end">
                 <div className="bg-[#DCF8C6] text-gray-900 px-4 md:px-5 py-2 md:py-3 rounded-2xl rounded-tr-sm max-w-[80%] shadow-lg">
                   <p className="text-base md:text-lg">Olá</p>
@@ -88,7 +81,6 @@ const AILeadsSection = () => {
                 </div>
               </div>
               
-              {/* Bot response - left aligned */}
               <div className="flex justify-start">
                 <div className="bg-white text-gray-900 px-4 md:px-5 py-2 md:py-3 rounded-2xl rounded-tl-sm max-w-[90%] shadow-lg border border-gray-100">
                   <p className="text-base md:text-lg">Olá, sou a Ana, atendente da Clínica Mais Cabelo. Como posso te ajudar?😁</p>
