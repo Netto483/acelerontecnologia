@@ -36,6 +36,11 @@ const stats: StatData[] = [
   { icon: Headphones, label: "Suporte durante o projeto:", value: "24/7" },
 ];
 
+const SitesStatsSection = () => {
+  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+  const showCarousel = isMobile || isTablet;
+
   return (
     <section className="min-h-[98px] py-4 md:py-0 md:h-[98px] relative flex items-center overflow-hidden">
       {/* Background image */}
