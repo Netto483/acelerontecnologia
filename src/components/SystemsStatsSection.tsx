@@ -1,43 +1,19 @@
 import { Shield, Clock, BarChart3, Headphones, DollarSign } from "lucide-react";
-import statsBackground from "@/assets/stats-background.png";
+import statsBackground from "@/assets/stats-background.png?format=webp&quality=80";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile, useIsTablet } from "@/hooks/use-mobile";
+import { forwardRef } from "react";
+import type { LucideIcon } from "lucide-react";
 
-const SystemsStatsSection = () => {
-  const isMobile = useIsMobile();
-  const isTablet = useIsTablet();
-  const showCarousel = isMobile || isTablet;
-  
-  const stats = [
-    {
-      icon: Shield,
-      label: "Garantia:",
-      value: "60 dias",
-    },
-    {
-      icon: Clock,
-      label: "Tempo de entrega:",
-      value: "1 mês - 3 Meses",
-    },
-    {
-      icon: BarChart3,
-      label: "Maior Benefício:",
-      value: "Dados unificados e em tempo real",
-    },
-    {
-      icon: Headphones,
-      label: "Suporte:",
-      value: "24/7",
-    },
-    {
-      icon: DollarSign,
-      label: "Preços:",
-      value: "a partir de R$1990,00",
-    },
-  ];
+interface StatData {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+}
 
-  const StatItem = ({ stat, index }: { stat: typeof stats[0]; index: number }) => (
+const StatItem = forwardRef<HTMLDivElement, { stat: StatData; index: number }>(
+  ({ stat, index }, _ref) => (
     <div key={index} className="flex items-center gap-2 md:gap-3">
       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
         <stat.icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
@@ -47,7 +23,18 @@ const SystemsStatsSection = () => {
         <span className="text-white font-semibold text-xs md:text-base leading-tight">{stat.value}</span>
       </div>
     </div>
-  );
+  )
+);
+
+StatItem.displayName = "StatItem";
+
+const stats: StatData[] = [
+  { icon: Shield, label: "Garantia:", value: "60 dias" },
+  { icon: Clock, label: "Tempo de entrega:", value: "1 mês - 3 Meses" },
+  { icon: BarChart3, label: "Maior Benefício:", value: "Dados unificados e em tempo real" },
+  { icon: Headphones, label: "Suporte:", value: "24/7" },
+  { icon: DollarSign, label: "Preços:", value: "a partir de R$1990,00" },
+];
 
   return (
     <section className="min-h-[98px] py-4 md:py-0 md:h-[98px] relative flex items-center overflow-hidden">
